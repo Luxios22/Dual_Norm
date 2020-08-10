@@ -1,6 +1,6 @@
-2020-08-10 15:33:38,096 Reid_Baseline INFO: Using 1 GPUS
-2020-08-10 15:33:38,096 Reid_Baseline INFO: Loaded configuration file config/dual_norm.yaml
-2020-08-10 15:33:38,096 Reid_Baseline INFO: Running with config:
+2020-08-10 17:38:41,122 Reid_Baseline INFO: Using 1 GPUS
+2020-08-10 17:38:41,122 Reid_Baseline INFO: Loaded configuration file config/dual_norm.yaml
+2020-08-10 17:38:41,122 Reid_Baseline INFO: Running with config:
 DATALOADER:
   NUM_INSTANCE: 32
   NUM_WORKERS: 8
@@ -58,4 +58,4 @@ SOLVER:
 TEST:
   IMS_PER_BATCH: 256
   LOAD_EPOCH: 149
-2020-08-10 15:33:41,489 Reid_Baseline INFO: Start training
+2020-08-10 17:38:44,014 Reid_Baseline INFO: Start training

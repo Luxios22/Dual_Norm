@@ -38,7 +38,7 @@ class CUHK02_Raw(BasePlainDataset):
 
     def _process_dir(self, dir_path, relabel=False):
         img_paths = glob.glob(os.path.join(dir_path, '**/*.png'), recursive=True)
-        pattern = re.compile(r'P([\d])\/cam([\d])\/([\d]+)_([\d]+)')
+        # pattern = re.compile(r'P([\d])\/cam([\d])\/([\d]+)_([\d]+)')
 
         # Example: ./P1/cam2/238_0324.png
 
@@ -49,7 +49,12 @@ class CUHK02_Raw(BasePlainDataset):
         else:
             pid_container = set()
             for img_path in img_paths:
-                P, cam, pid, _ = map(int, pattern.search(img_path).groups())
+                # P, cam, pid, _ = map(int, pattern.search(img_path).groups())
+                dir1, filename = os.path.split(img_path)[-1]
+                pid = filename.split('_')[0]
+                dir2, cam_name = os.path.split(dir1)
+                cam = cam_name[-1]
+                P = os.path.split(dir2)[-1][-1]
                 if pid == -1: continue  # junk images are just ignored
                 pid_container.add('_'.join([str(P), str(pid)]))
             pid2label = {pid: label for label, pid in enumerate(pid_container)}
@@ -58,7 +63,12 @@ class CUHK02_Raw(BasePlainDataset):
 
         dataset = []
         for img_path in img_paths:
-            P, cam, pid, _ = map(int, pattern.search(img_path).groups())
+            # P, cam, pid, _ = map(int, pattern.search(img_path).groups())
+            dir1, filename = os.path.split(img_path)[-1]
+            pid = filename.split('_')[0]
+            dir2, cam_name = os.path.split(dir1)
+            cam = cam_name[-1]
+            P = os.path.split(dir2)[-1][-1]
             if pid == -1: continue  # junk images are just ignored
             camid = (P-1)*2 + cam-1  # index starts from 0
             pid = '_'.join([str(P), str(pid)])
