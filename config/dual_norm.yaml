@@ -14,8 +14,8 @@ INPUT:
 DATASETS:
   SOURCE: ['Market-1501', 'DukeMTMC-reID', 'CUHK03', 'CUHK02', 'CUHK-SYSU']
   TARGET: ['PRID2011', 'GRID', 'VIPeR', 'i-LIDS']
-  # STORE_DIR: './datasets'
-  STORE_DIR: '/Users/linshan/Pictures/Person_ReID_Datasets'
+  STORE_DIR: './datasets'
+  # STORE_DIR: '/Users/linshan/Pictures/Person_ReID_Datasets'
   # STORE_DIR: '../dsta/Datasets'
 DATALOADER:
   NUM_WORKERS: 8
@@ -33,5 +33,5 @@ TEST:
   LOAD_EPOCH: 149
 
 OUTPUT_DIR: "./checkpoint/Dual_Norm"
-DEVICE: "cpu"
-# DEVICE: "cuda:0"
+# DEVICE: "cpu"
+DEVICE: "cuda:0"
