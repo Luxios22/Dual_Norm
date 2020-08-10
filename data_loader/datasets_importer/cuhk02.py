@@ -50,7 +50,7 @@ class CUHK02_Raw(BasePlainDataset):
             pid_container = set()
             for img_path in img_paths:
                 # P, cam, pid, _ = map(int, pattern.search(img_path).groups())
-                dir1, filename = os.path.split(img_path)[-1]
+                dir1, filename = os.path.split(img_path)
                 pid = filename.split('_')[0]
                 dir2, cam_name = os.path.split(dir1)
                 cam = cam_name[-1]
@@ -64,7 +64,7 @@ class CUHK02_Raw(BasePlainDataset):
         dataset = []
         for img_path in img_paths:
             # P, cam, pid, _ = map(int, pattern.search(img_path).groups())
-            dir1, filename = os.path.split(img_path)[-1]
+            dir1, filename = os.path.split(img_path)
             pid = filename.split('_')[0]
             dir2, cam_name = os.path.split(dir1)
             cam = cam_name[-1]
