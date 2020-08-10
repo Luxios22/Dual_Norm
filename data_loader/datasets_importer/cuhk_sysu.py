@@ -41,7 +41,7 @@ class CUHK_SYSU_Raw(BasePlainDataset):
     def _check_process(self):
         """Check if all files are available before going deeper"""
         if not os.path.exists(self.dataset_dir):
-            
+            print('CUHK-SYSU Image Extraction Processing')
             person_pth =  os.path.join(self.store_dir, self.dataset_name, 'annotation', 'Person.mat')
             print(person_pth)
             img_dir = os.path.join(self.store_dir, self.dataset_name,'Image', 'SSM')
@@ -52,7 +52,7 @@ class CUHK_SYSU_Raw(BasePlainDataset):
             persons = loadmat(person_pth)['Person'][0]
             for person in persons:
                 process(person, img_dir, save_dir)
-            print('CUHK-SYSU Extraction Completed')
+            print('CUHK-SYSU Image Extraction Completed')
 
     def _check_before_run(self):
         """Check if all files are available before going deeper"""

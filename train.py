@@ -166,7 +166,7 @@ def train(config_file, resume=False, **kwargs):
     # model = models.init_model(name='mobilenet_ifn', num_classes=num_classes)
     # optimizer = optim.SGD(model.parameters(), lr=0.01,momentum=0.9, weight_decay=5e-4, nesterov=True)
     # scheduler = lr_scheduler.StepLR(optimizer, step_size=100, gamma=0.1)
-    loss_fn = CrossEntropyLabelSmooth(num_classes=num_classes)
+    loss_fn = CrossEntropyLabelSmooth(num_classes=num_classes, device=cfg.DEVICE)
 
     # for resnet50
     model = models.init_model(name='resnet50_ifn', num_classes=num_classes)

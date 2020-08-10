@@ -18,7 +18,7 @@ DATASETS:
   # STORE_DIR: '/Users/linshan/Pictures/Person_ReID_Datasets'
   # STORE_DIR: '../dsta/Datasets'
 DATALOADER:
-  NUM_WORKERS: 8
+  NUM_WORKERS: 0
 
 SOLVER:
   LOSS: 'softmax'
@@ -26,7 +26,7 @@ SOLVER:
   IMS_PER_BATCH: 64
 
   CHECKPOINT_PERIOD: 20
-  EVAL_PERIOD: 20
+  EVAL_PERIOD: 1
 
 TEST:
   IMS_PER_BATCH: 256

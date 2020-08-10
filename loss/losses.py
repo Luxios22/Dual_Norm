@@ -53,7 +53,7 @@ class CrossEntropyLabelSmooth(nn.Module):
         log_probs = self.logsoftmax(inputs)
         # targets = torch.zeros(log_probs.size()).scatter_(1, targets.unsqueeze(1).data, 1)# for mldg da
         targets = torch.zeros(log_probs.size()).scatter_(1, targets.unsqueeze(1).data.cpu(), 1)#for zzd
-        targets = targets.device(self.device)
+        targets = targets.to(self.device)
         targets = (1 - self.epsilon) * targets + self.epsilon / self.num_classes
         loss = (-Variable(targets) * log_probs).mean(0).sum()
         return loss
@@ -149,7 +149,7 @@ class CenterLoss(nn.Module):
         self.feat_dim = feat_dim
         self.device = device
 
-        self.centers = nn.Parameter(torch.randn(self.num_classes, self.feat_dim)).device(self.device)
+        self.centers = nn.Parameter(torch.randn(self.num_classes, self.feat_dim)).to(self.device)
 
     def forward(self, x, labels):
         """
@@ -163,7 +163,7 @@ class CenterLoss(nn.Module):
         distmat.addmm_(1, -2, x, self.centers.t())
 
         classes = torch.arange(self.num_classes).long()
-        classes = classes.device(self.device)
+        classes = classes.to(self.device)
         
         labels = labels.unsqueeze(1).expand(batch_size, self.num_classes)
         mask = labels.data.eq(classes.expand(batch_size, self.num_classes))

@@ -75,7 +75,7 @@ class Random_iLIDS(BaseImageDataset):
                     self.gallery.append((ele[0], ele[1], 1))
 
         if verbose:
-            print("=> Random QiLIDS Loaded")
+            print("=> Random i-LIDS Loaded")
             self.print_dataset_statistics(self.train, self.query, self.gallery)
 
         self.num_train_pids, self.num_train_imgs, self.num_train_cams = self.get_imagedata_info(self.train)

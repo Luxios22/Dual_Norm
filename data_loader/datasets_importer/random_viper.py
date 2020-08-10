@@ -35,7 +35,9 @@ class VIPeR(BasePlainDataset):
         dataset = []
         pid2label = set()
         for img_path in img_paths:
-            camid, pid = pattern.search(img_path).groups()
+            filename = os.path.basename(img_path)
+            camid, pid = filename.split('.')[0].split('_')
+            # camid, pid = pattern.search(img_path).groups()
             pid = int(pid)
             pid2label.add(pid)
             camid = 0 if camid=='a' else 1

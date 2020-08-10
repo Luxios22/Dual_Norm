@@ -1,15 +1,15 @@
-2020-08-10 17:38:41,122 Reid_Baseline INFO: Using 1 GPUS
-2020-08-10 17:38:41,122 Reid_Baseline INFO: Loaded configuration file config/dual_norm.yaml
-2020-08-10 17:38:41,122 Reid_Baseline INFO: Running with config:
+2020-08-10 18:00:40,507 Reid_Baseline INFO: Using 1 GPUS
+2020-08-10 18:00:40,508 Reid_Baseline INFO: Loaded configuration file .\config\dual_norm.yaml
+2020-08-10 18:00:40,509 Reid_Baseline INFO: Running with config:
 DATALOADER:
   NUM_INSTANCE: 32
-  NUM_WORKERS: 8
+  NUM_WORKERS: 0
 DATASETS:
   MERGE: True
   SOURCE: ['Market-1501', 'DukeMTMC-reID', 'CUHK03', 'CUHK02', 'CUHK-SYSU']
-  STORE_DIR: /Users/linshan/Pictures/Person_ReID_Datasets
+  STORE_DIR: ./datasets
   TARGET: ['PRID2011', 'GRID', 'VIPeR', 'i-LIDS']
-DEVICE: cpu
+DEVICE: cuda:0
 INPUT:
   BRIGHTNESS: 0.0
   CONTRAST: 0.0
@@ -36,7 +36,7 @@ SOLVER:
   BASE_LR: 0.0003
   BIAS_LR_FACTOR: 2
   CHECKPOINT_PERIOD: 20
-  EVAL_PERIOD: 20
+  EVAL_PERIOD: 1
   GAMMA: 0.1
   IMS_PER_BATCH: 64
   LAMBDA1: 1.0
@@ -58,4 +58,4 @@ SOLVER:
 TEST:
   IMS_PER_BATCH: 256
   LOAD_EPOCH: 149
-2020-08-10 17:38:44,014 Reid_Baseline INFO: Start training
+2020-08-10 18:00:43,109 Reid_Baseline INFO: Start training
