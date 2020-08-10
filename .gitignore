@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.DS_Store
+/datasets/Market-1501/*
+/datasets/DukeMTMC-reID/*
+/datasets/CUHK02/*
+/datasets/CUHK03/*
+/datasets/CUHK-SYSU/*
+/datasets/VIPeR/*
+/datasets/PRID2011/*
+/datasets/GRID/*
+/datasets/i-LIDS/*
