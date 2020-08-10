@@ -51,10 +51,10 @@ class CUHK02_Raw(BasePlainDataset):
             for img_path in img_paths:
                 # P, cam, pid, _ = map(int, pattern.search(img_path).groups())
                 dir1, filename = os.path.split(img_path)
-                pid = filename.split('_')[0]
+                pid = int(filename.split('_')[0])
                 dir2, cam_name = os.path.split(dir1)
-                cam = cam_name[-1]
-                P = os.path.split(dir2)[-1][-1]
+                cam = int(cam_name[-1])
+                P = int(os.path.split(dir2)[-1][-1])
                 if pid == -1: continue  # junk images are just ignored
                 pid_container.add('_'.join([str(P), str(pid)]))
             pid2label = {pid: label for label, pid in enumerate(pid_container)}
@@ -65,10 +65,10 @@ class CUHK02_Raw(BasePlainDataset):
         for img_path in img_paths:
             # P, cam, pid, _ = map(int, pattern.search(img_path).groups())
             dir1, filename = os.path.split(img_path)
-            pid = filename.split('_')[0]
+            pid = int(filename.split('_')[0])
             dir2, cam_name = os.path.split(dir1)
-            cam = cam_name[-1]
-            P = os.path.split(dir2)[-1][-1]
+            cam = int(cam_name[-1])
+            P = int(os.path.split(dir2)[-1][-1])
             if pid == -1: continue  # junk images are just ignored
             camid = (P-1)*2 + cam-1  # index starts from 0
             pid = '_'.join([str(P), str(pid)])
