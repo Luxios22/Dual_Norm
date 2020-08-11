@@ -137,3 +137,5 @@ dmypy.json
 /datasets/PRID2011/*
 /datasets/GRID/*
 /datasets/i-LIDS/*
+
+*.pth
