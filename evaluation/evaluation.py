@@ -24,7 +24,7 @@ def evaluation(all_feats,all_pids,all_camids,num_query,rr=False, max_rank=50, mo
             m, n = qf.shape[0], gf.shape[0]
             distmat = torch.pow(qf, 2).sum(dim=1, keepdim=True).expand(m, n) + \
                       torch.pow(gf, 2).sum(dim=1, keepdim=True).expand(n, m).t()
-            distmat.addmm_(1, -2, qf, gf.t())
+            distmat.addmm_(qf, gf.t(), beta=1, alpha = -2)
             distmat = distmat.cpu().numpy()
         else:
             raise ValueError('Invalid evaluation mode.')
