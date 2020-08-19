@@ -32,6 +32,6 @@ TEST:
   IMS_PER_BATCH: 256
   LOAD_EPOCH: 160
 
-OUTPUT_DIR: "./checkpoint/Dual_Norm"
+OUTPUT_DIR: "./checkpoint/Dual_Norm_Offical"
 # DEVICE: "cpu"
 DEVICE: "cuda:0"
