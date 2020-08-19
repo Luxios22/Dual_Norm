@@ -193,7 +193,7 @@ def test(config_file, **kwargs):
 
 
     # logger.info("Start training")
-    # since = time.time()
+    since = time.time()
     # for epoch in range(epochs):
     #     count = 0
     #     running_loss = 0.0
@@ -257,7 +257,7 @@ def test(config_file, **kwargs):
             all_cmc[1] = all_cmc[1] + cmc[4]
             all_cmc[2] = all_cmc[2] + cmc[9]
             all_mAP = all_mAP + mAP
-        logger.info("Validation Results: {} - Epoch: {}".format(cfg.DATASETS.TARGET[i], base_epo+epoch+1))
+        logger.info("Validation Results: {}".format(cfg.DATASETS.TARGET[i]))
         logger.info("mAP: {:.1%}".format(all_mAP/10))
         logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(1, all_cmc[0]/10))
         logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(5, all_cmc[1]/10))
