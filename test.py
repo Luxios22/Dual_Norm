@@ -131,7 +131,7 @@ def val_collate_fn(batch):
     return torch.stack(imgs, dim=0), pids, camids
 
 
-def test(config_file, **kwargs):
+def test(config_file = 'config/dual_norm.yaml', num_classes = 18531,  **kwargs):
     cfg.merge_from_file(config_file)
     if kwargs:
         opts = []
@@ -170,6 +170,7 @@ def test(config_file, **kwargs):
     # loss_fn = CrossEntropyLabelSmooth(num_classes=num_classes, device=cfg.DEVICE)
 
     # for resnet50
+    num_classes = 18531
     model = models.init_model(name='resnet50_ifn', num_classes=num_classes)
     model.load_state_dict(torch.load(os.path.join(output_dir,'net_'+str(cfg.TEST.LOAD_EPOCH)+'.pth'),map_location=torch.device('cpu')))
     model.to(device)
