@@ -154,13 +154,10 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18531,  **kwargs):
         logger.info("Loaded configuration file {}".format(config_file))
         logger.info("Running with config:\n{}".format(cfg))
 
-    checkpoint_period = cfg.SOLVER.CHECKPOINT_PERIOD
-    eval_period = cfg.SOLVER.EVAL_PERIOD
     output_dir = cfg.OUTPUT_DIR
     device = torch.device(cfg.DEVICE)
-    epochs = cfg.SOLVER.MAX_EPOCHS
 
-    train_loader, _, num_query, num_classes = data_loader(cfg,cfg.DATASETS.SOURCE, merge=cfg.DATASETS.MERGE)
+    # train_loader, _, num_query, num_classes = data_loader(cfg,cfg.DATASETS.SOURCE, merge=cfg.DATASETS.MERGE)
     # _, val_loader, _, _ = data_loader(cfg,cfg.DATASETS.TARGET,merge=False)
     val_stats = [data_loader(cfg,(target,),merge=False)[1:3] for target in cfg.DATASETS.TARGET]
 
@@ -170,10 +167,11 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18531,  **kwargs):
     # loss_fn = CrossEntropyLabelSmooth(num_classes=num_classes, device=cfg.DEVICE)
 
     # for resnet50
-    num_classes = 18531
     model = models.init_model(name='resnet50_ifn', num_classes=num_classes)
-    model.load_state_dict(torch.load(os.path.join(output_dir,'net_'+str(cfg.TEST.LOAD_EPOCH)+'.pth'),map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(os.path.join(output_dir,'net_'+str(cfg.TEST.LOAD_EPOCH)+'.pth'),map_location=torch.device('cpu')), strict=False)
     model.to(device)
+    model = model.eval()
+
 
 
           # must be done before the optimizer generation
