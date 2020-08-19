@@ -232,28 +232,36 @@ def train(config_file, resume=False, **kwargs):
         # Validation
         if (base_epo+epoch+1) % eval_period == 0:
             for i, (val_loader, num_query) in enumerate(val_stats):
-                all_feats = []
-                all_pids = []
-                all_camids = []
-                for data in tqdm(val_loader, desc='Feature Extraction', leave=False):
-                    model.eval()
-                    with torch.no_grad():
-                        images, pids, camids = data
-                        if device:
-                            model.to(device)
-                            images = images.to(device)
+                all_cmc = [0.0,0.0,0.0]
+                all_mAP = 0.0
+                for j in range(10):
+                    all_feats = []
+                    all_pids = []
+                    all_camids = []
+                    for data in tqdm(val_loader, desc='Feature Extraction', leave=False):
+                        model.eval()
+                        with torch.no_grad():
+                            images, pids, camids = data
+                            if device:
+                                model.to(device)
+                                images = images.to(device)
 
-                        feats = model(images)
+                            feats = model(images)
 
-                    all_feats.append(feats)
-                    all_pids.extend(np.asarray(pids))
-                    all_camids.extend(np.asarray(camids))
+                        all_feats.append(feats)
+                        all_pids.extend(np.asarray(pids))
+                        all_camids.extend(np.asarray(camids))
 
-                cmc, mAP = evaluation(all_feats,all_pids,all_camids,num_query)
+                    cmc, mAP = evaluation(all_feats,all_pids,all_camids,num_query)
+                    all_cmc[0] = all_cmc[0] + cmc[0]
+                    all_cmc[1] = all_cmc[1] + cmc[4]
+                    all_cmc[2] = all_cmc[2] + cmc[9]
+                    all_mAP = all_mAP + mAP
                 logger.info("Validation Results: {} - Epoch: {}".format(cfg.DATASETS.TARGET[i], base_epo+epoch+1))
-                logger.info("mAP: {:.1%}".format(mAP))
-                for r in [1, 5, 10]:
-                    logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(r, cmc[r - 1]))
+                logger.info("mAP: {:.1%}".format(all_mAP/10))
+                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(1, all_cmc[0]/10))
+                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(5, all_cmc[1]/10))
+                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(10, all_cmc[2]/10))
 
 
     time_elapsed = time.time() - since
