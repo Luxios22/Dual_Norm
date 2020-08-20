@@ -231,9 +231,13 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18531,  **kwargs):
         # Validation
     logger.info("Start testing")
     for i, (val_loader, num_query) in enumerate(val_stats):
+        if cfg.DATASETS.TARGET[i] == 'MSMT17_V2':
+            n = 1
+        else:
+            n = 10
         all_cmc = [0.0,0.0,0.0]
         all_mAP = 0.0
-        for j in tqdm(range(10)):
+        for j in tqdm(range(n)):
             all_feats = []
             all_pids = []
             all_camids = []
@@ -257,10 +261,10 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18531,  **kwargs):
             all_cmc[2] = all_cmc[2] + cmc[9]
             all_mAP = all_mAP + mAP
         logger.info("Validation Results: {}".format(cfg.DATASETS.TARGET[i]))
-        logger.info("mAP: {:.1%}".format(all_mAP/10))
-        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(1, all_cmc[0]/10))
-        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(5, all_cmc[1]/10))
-        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(10, all_cmc[2]/10))
+        logger.info("mAP: {:.1%}".format(all_mAP/n))
+        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(1, all_cmc[0]/n))
+        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(5, all_cmc[1]/n))
+        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(10, all_cmc[2]/n))
 
 
     time_elapsed = time.time() - since
