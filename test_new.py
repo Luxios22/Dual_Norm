@@ -130,6 +130,12 @@ def val_collate_fn(batch):
     imgs, pids, camids, _ = zip(*batch)
     return torch.stack(imgs, dim=0), pids, camids
 
+def fliplr(img):
+    '''flip horizontal'''
+    inv_idx = torch.arange(img.size(3)-1,-1,-1).long()  # N x C x H x W N:TensornSamples in minibatch, i.e., batchsize x nChannels x Height x Width
+    img_flip = img.index_select(3,inv_idx)
+    return img_flip
+
 
 def test(config_file = 'config/dual_norm.yaml', num_classes = 18530, number_fold = 10,  **kwargs):
     cfg.merge_from_file(config_file)
@@ -231,10 +237,11 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18530, number_fold
         # Validation
     logger.info("Start testing")
     for i, (val_loader, num_query) in enumerate(val_stats):
-        n = number_fold
+        fold = number_fold
         all_cmc = [0.0,0.0,0.0]
         all_mAP = 0.0
-        for j in tqdm(range(n)):
+        features = torch.FloatTensor()
+        for j in tqdm(range(fold)):
             all_feats = []
             all_pids = []
             all_camids = []
@@ -242,13 +249,27 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18530, number_fold
                 model.eval()
                 with torch.no_grad():
                     images, pids, camids = data
+                    n, c, h, w = images.size()
                     if device:
                         model.to(device)
                         images = images.to(device)
 
-                    feats = model(images)
 
-                all_feats.append(feats)
+
+                    ff = torch.FloatTensor(n,2048).zero_()
+                    for i in range(2):
+                        if(i==1):
+                            images = fliplr(images)
+                        input_img = images.to(device)
+                        outputs = model(input_img)
+                        f = outputs.data.cpu()
+                        ff = ff+f   
+                    fnorm = torch.norm(ff, p=2, dim=1, keepdim=True)
+                    ff = ff.div(fnorm.expand_as(ff))
+
+                    features = torch.cat((features, ff), 0)
+
+                all_feats.append(features)
                 all_pids.extend(np.asarray(pids))
                 all_camids.extend(np.asarray(camids))
 

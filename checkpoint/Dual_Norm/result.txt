@@ -1,15 +1,15 @@
-2020-08-20 04:32:45,053 Reid_Baseline INFO: Using 1 GPUS
-2020-08-20 04:32:45,056 Reid_Baseline INFO: Loaded configuration file config\dual_norm.yaml
-2020-08-20 04:32:45,057 Reid_Baseline INFO: Running with config:
+2020-09-01 11:07:46,543 Reid_Baseline INFO: Using 1 GPUS
+2020-09-01 11:07:46,544 Reid_Baseline INFO: Loaded configuration file config/dual_norm.yaml
+2020-09-01 11:07:46,544 Reid_Baseline INFO: Running with config:
 DATALOADER:
   NUM_INSTANCE: 32
   NUM_WORKERS: 0
 DATASETS:
   MERGE: True
   SOURCE: ['Market-1501', 'DukeMTMC-reID', 'CUHK03', 'CUHK02', 'CUHK-SYSU']
-  STORE_DIR: ./datasets
+  STORE_DIR: /Users/linshan/Pictures/Person_ReID_Datasets
   TARGET: ['PRID2011', 'GRID', 'VIPeR', 'i-LIDS']
-DEVICE: cuda:0
+DEVICE: cpu
 INPUT:
   BRIGHTNESS: 0.0
   CONTRAST: 0.0
@@ -28,7 +28,7 @@ MODEL:
   D_PARAM: 1.0
   G_PARAM: 1.0
   LAST_STRIDE: 1
-  NAME: dual_norm
+  NAME: resnet50_ifn
   POOL: AVG
 OUTPUT_DIR: ./checkpoint/Dual_Norm
 RE_RANKING: False
@@ -57,27 +57,5 @@ SOLVER:
   WEIGHT_DECAY_BIAS: 0.0
 TEST:
   IMS_PER_BATCH: 256
-  LOAD_EPOCH: 100
-2020-08-20 04:32:48,601 Reid_Baseline INFO: Start testing
-2020-08-20 04:33:12,372 Reid_Baseline INFO: Validation Results: PRID2011
-2020-08-20 04:33:12,373 Reid_Baseline INFO: mAP: 68.7%
-2020-08-20 04:33:12,374 Reid_Baseline INFO: CMC curve, Rank-1  :57.0%
-2020-08-20 04:33:12,376 Reid_Baseline INFO: CMC curve, Rank-5  :84.0%
-2020-08-20 04:33:12,376 Reid_Baseline INFO: CMC curve, Rank-10 :88.0%
-2020-08-20 04:33:45,001 Reid_Baseline INFO: Validation Results: GRID
-2020-08-20 04:33:45,003 Reid_Baseline INFO: mAP: 46.2%
-2020-08-20 04:33:45,004 Reid_Baseline INFO: CMC curve, Rank-1  :36.0%
-2020-08-20 04:33:45,004 Reid_Baseline INFO: CMC curve, Rank-5  :56.0%
-2020-08-20 04:33:45,020 Reid_Baseline INFO: CMC curve, Rank-10 :68.8%
-2020-08-20 04:34:03,512 Reid_Baseline INFO: Validation Results: VIPeR
-2020-08-20 04:34:03,513 Reid_Baseline INFO: mAP: 62.7%
-2020-08-20 04:34:03,514 Reid_Baseline INFO: CMC curve, Rank-1  :55.1%
-2020-08-20 04:34:03,515 Reid_Baseline INFO: CMC curve, Rank-5  :70.6%
-2020-08-20 04:34:03,516 Reid_Baseline INFO: CMC curve, Rank-10 :75.3%
-2020-08-20 04:34:07,556 Reid_Baseline INFO: Validation Results: i-LIDS
-2020-08-20 04:34:07,556 Reid_Baseline INFO: mAP: 87.5%
-2020-08-20 04:34:07,557 Reid_Baseline INFO: CMC curve, Rank-1  :81.7%
-2020-08-20 04:34:07,558 Reid_Baseline INFO: CMC curve, Rank-5  :93.3%
-2020-08-20 04:34:07,559 Reid_Baseline INFO: CMC curve, Rank-10 :98.3%
-2020-08-20 04:34:07,560 Reid_Baseline INFO: Training complete in 1m 19s
-2020-08-20 04:34:07,561 Reid_Baseline INFO: ----------
+  LOAD_EPOCH: 160
+2020-09-01 11:07:47,848 Reid_Baseline INFO: Start testing

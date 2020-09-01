@@ -4,6 +4,7 @@ from .ResNet_IFN import *
 from .ResNet import *
 from .MobileNet_IFN import *
 from .MobileNet import *
+from .MMFA_AAE import resnet50_IFN as MMFA_AAE
 
 
 
@@ -12,6 +13,7 @@ __factory = {
     'resnet50_ifn': resnet50_IFN,
 	'mobilenet':MobileNetV2,
     'mobilenet_ifn': MobileNetV2_IFN,
+    'mmfa_aae': MMFA_AAE,
 }
 
 def get_names():

@@ -1,5 +1,5 @@
 MODEL:
-  NAME: 'resnet50_ifn'
+  NAME: 'resnet50'
   LAST_STRIDE: 1
 
 INPUT:
@@ -33,6 +33,6 @@ TEST:
   IMS_PER_BATCH: 256
   LOAD_EPOCH: 160
 
-OUTPUT_DIR: "./checkpoint/Dual_Norm"
+OUTPUT_DIR: "./checkpoint/ResNet"
 # DEVICE: "cpu"
 DEVICE: "cuda:0"

@@ -139,3 +139,6 @@ dmypy.json
 /datasets/i-LIDS/*
 
 *.pth
+config/mmfa_aae.yaml
+models/MMFA_AAE.py
+image/*
