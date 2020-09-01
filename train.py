@@ -25,28 +25,29 @@ else:
     from tqdm import tqdm
 
 
-transform_train_list = [
-    transforms.Resize((256, 128), interpolation=3),
-    transforms.Pad(10),
-    transforms.RandomCrop((256, 128)),
-    transforms.RandomHorizontalFlip(),
-    transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-]
-
-transform_val_list = [
-    transforms.Resize(size=(256,128),interpolation=3), #Image.BICUBIC
-    transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-]
-
-
-data_transforms = {
-    'train': transforms.Compose(transform_train_list),
-    'val': transforms.Compose(transform_val_list),
-}
-
 def data_loader(cfg,dataset_names,merge):
+
+    transform_train_list = [
+        transforms.Resize(cfg.INPUT.SIZE_TRAIN, interpolation=3),
+        transforms.Pad(10),
+        transforms.RandomCrop(cfg.INPUT.SIZE_TRAIN),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    ]
+
+    transform_val_list = [
+        transforms.Resize(size=cfg.INPUT.SIZE_TRAIN,interpolation=3), #Image.BICUBIC
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    ]
+
+
+    data_transforms = {
+        'train': transforms.Compose(transform_train_list),
+        'val': transforms.Compose(transform_val_list),
+    }
+
     train_transforms = data_transforms['train']
     val_transforms = data_transforms['val']
     num_workers = cfg.DATALOADER.NUM_WORKERS
@@ -201,6 +202,7 @@ def train(config_file, resume=False, **kwargs):
         for data in tqdm(train_loader, desc='Iteration', leave=False):
             model.train()
             images, labels = data
+            n, c, h, w = images.size()
             if device:
                 model.to(device)
                 images, labels = images.to(device), labels.to(device)
@@ -230,11 +232,12 @@ def train(config_file, resume=False, **kwargs):
             torch.save(scheduler.state_dict(), os.path.join(output_dir, 'sch_epo'+str(base_epo+epoch+1)+'.pth'))
 
         # Validation
+        fold = 1
         if (base_epo+epoch+1) % eval_period == 0:
             for i, (val_loader, num_query) in enumerate(val_stats):
                 all_cmc = [0.0,0.0,0.0]
                 all_mAP = 0.0
-                for j in range(10):
+                for j in range(fold):
                     all_feats = []
                     all_pids = []
                     all_camids = []
@@ -258,10 +261,10 @@ def train(config_file, resume=False, **kwargs):
                     all_cmc[2] = all_cmc[2] + cmc[9]
                     all_mAP = all_mAP + mAP
                 logger.info("Validation Results: {} - Epoch: {}".format(cfg.DATASETS.TARGET[i], base_epo+epoch+1))
-                logger.info("mAP: {:.1%}".format(all_mAP/10))
-                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(1, all_cmc[0]/10))
-                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(5, all_cmc[1]/10))
-                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(10, all_cmc[2]/10))
+                logger.info("mAP: {:.1%}".format(all_mAP/fold))
+                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(1, all_cmc[0]/fold))
+                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(5, all_cmc[1]/fold))
+                logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(10, all_cmc[2]/fold))
 
 
     time_elapsed = time.time() - since

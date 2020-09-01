@@ -24,29 +24,29 @@ if check_jupyter_run():
 else:
     from tqdm import tqdm
 
-
-transform_train_list = [
-    transforms.Resize((256, 128), interpolation=3),
-    transforms.Pad(10),
-    transforms.RandomCrop((256, 128)),
-    transforms.RandomHorizontalFlip(),
-    transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-]
-
-transform_val_list = [
-    transforms.Resize(size=(256,128),interpolation=3), #Image.BICUBIC
-    transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-]
-
-
-data_transforms = {
-    'train': transforms.Compose(transform_train_list),
-    'val': transforms.Compose(transform_val_list),
-}
-
 def data_loader(cfg,dataset_names,merge):
+
+    transform_train_list = [
+        transforms.Resize(cfg.INPUT.SIZE_TRAIN, interpolation=3),
+        transforms.Pad(10),
+        transforms.RandomCrop(cfg.INPUT.SIZE_TRAIN),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    ]
+
+    transform_val_list = [
+        transforms.Resize(size=cfg.INPUT.SIZE_TRAIN,interpolation=3), #Image.BICUBIC
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    ]
+
+
+    data_transforms = {
+        'train': transforms.Compose(transform_train_list),
+        'val': transforms.Compose(transform_val_list),
+    }
+
     train_transforms = data_transforms['train']
     val_transforms = data_transforms['val']
     num_workers = cfg.DATALOADER.NUM_WORKERS
