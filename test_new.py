@@ -250,8 +250,8 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18530, number_fold
                     images, pids, camids = data
                     n, c, h, w = images.size()
                     ff = torch.FloatTensor(n,2048).zero_()
-                    for i in range(2):
-                        if(i==1):
+                    for k in range(2):
+                        if(k==1):
                             images = fliplr(images)
                         model.to(device)
                         input_img = images.to(device)
