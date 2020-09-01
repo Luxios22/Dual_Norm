@@ -271,10 +271,10 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18530, number_fold
             all_cmc[2] = all_cmc[2] + cmc[9]
             all_mAP = all_mAP + mAP
         logger.info("Validation Results: {}".format(cfg.DATASETS.TARGET[i]))
-        logger.info("mAP: {:.1%}".format(all_mAP/n))
-        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(1, all_cmc[0]/n))
-        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(5, all_cmc[1]/n))
-        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(10, all_cmc[2]/n))
+        logger.info("mAP: {:.1%}".format(all_mAP/fold))
+        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(1, all_cmc[0]/fold))
+        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(5, all_cmc[1]/fold))
+        logger.info("CMC curve, Rank-{:<3}:{:.1%}".format(10, all_cmc[2]/fold))
 
 
     time_elapsed = time.time() - since
