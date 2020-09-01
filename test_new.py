@@ -154,7 +154,7 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18530, number_fold
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    logger = make_logger("Reid_Baseline", output_dir,'result', resume)
+    logger = make_logger("Reid_Baseline", output_dir,'result_new', resume)
     if not resume:
         logger.info("Using {} GPUS".format(1))
         logger.info("Loaded configuration file {}".format(config_file))
