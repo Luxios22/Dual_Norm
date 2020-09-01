@@ -240,7 +240,6 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18530, number_fold
         fold = number_fold
         all_cmc = [0.0,0.0,0.0]
         all_mAP = 0.0
-        features = torch.FloatTensor()
         for j in tqdm(range(fold)):
             all_feats = []
             all_pids = []
@@ -262,9 +261,7 @@ def test(config_file = 'config/dual_norm.yaml', num_classes = 18530, number_fold
                     fnorm = torch.norm(ff, p=2, dim=1, keepdim=True)
                     ff = ff.div(fnorm.expand_as(ff))
 
-                    features = torch.cat((features, ff), 0)
-
-                all_feats.append(features)
+                all_feats.append(ff)
                 all_pids.extend(np.asarray(pids))
                 all_camids.extend(np.asarray(camids))
 
