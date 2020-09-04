@@ -137,7 +137,7 @@ dmypy.json
 /datasets/PRID2011/*
 /datasets/GRID/*
 /datasets/i-LIDS/*
-
+/datasets/MSMT17_V2/*
 *.pth
 config/mmfa_aae.yaml
 models/MMFA_AAE.py

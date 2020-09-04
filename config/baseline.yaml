@@ -1,6 +1,6 @@
 MODEL:
   NAME: 'resnet50'
-  LAST_STRIDE: 1
+  LAST_STRIDE: 2
 
 INPUT:
   SIZE_TRAIN: [256, 128]

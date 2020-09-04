@@ -170,7 +170,7 @@ def train(config_file, resume=False, **kwargs):
     loss_fn = CrossEntropyLabelSmooth(num_classes=num_classes, device=cfg.DEVICE)
 
     # for resnet50
-    model = models.init_model(name='resnet50_ifn', num_classes=num_classes)
+    model = models.init_model(name='resnet50_ifn', num_classes=num_classes, last_stride=cfg.MODEL.LAST_STRIDE)
     if resume:
         from utils.get_last_stats import get_last_stats
         checkpoints = get_last_stats(output_dir, ['net', 'opt', 'sch', 'epo'])

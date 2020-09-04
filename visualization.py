@@ -44,7 +44,7 @@ def visualization(config_file = 'config/dual_norm.yaml', num_classes = 18530, n 
 
     device = torch.device(cfg.DEVICE)
 
-    model = models.init_model(name=cfg.MODEL.NAME, num_classes=num_classes)
+    model = models.init_model(name=cfg.MODEL.NAME, num_classes=num_classes,  last_stride=cfg.MODEL.LAST_STRIDE)
     model.load_state_dict(torch.load(os.path.join(output_dir,'net_'+str(cfg.TEST.LOAD_EPOCH)+'.pth'),map_location=torch.device('cpu')), strict=False)
     model.to(device)
     model = model.eval()
