@@ -10,7 +10,7 @@ from evaluation import evaluation
 from datasets import Person_ReID_Dataset_Downloader
 from torch import optim
 from torch.optim import lr_scheduler
-from loss import CrossEntropyLabelSmooth
+from loss import CrossEntropyLabelSmooth, TripletLoss
 from torchvision import transforms
 from torch.utils.data import DataLoader
 from data_loader.datasets_importer import init_dataset, ImageDataset
@@ -167,10 +167,11 @@ def train(config_file, resume=False, **kwargs):
     # model = models.init_model(name='mobilenet_ifn', num_classes=num_classes)
     # optimizer = optim.SGD(model.parameters(), lr=0.01,momentum=0.9, weight_decay=5e-4, nesterov=True)
     # scheduler = lr_scheduler.StepLR(optimizer, step_size=100, gamma=0.1)
-    loss_fn = CrossEntropyLabelSmooth(num_classes=num_classes, device=cfg.DEVICE)
+    softmax = CrossEntropyLabelSmooth(num_classes=num_classes, device=cfg.DEVICE)
+    triplet = TripletLoss(cfg)
 
     # for resnet50
-    model = models.init_model(name='resnet50_ifn', num_classes=num_classes, last_stride=cfg.MODEL.LAST_STRIDE)
+    model = models.init_model(name='resnet50_ifn', num_classes=num_classes, loss=cfg.SOLVER.LOSS, last_stride=cfg.MODEL.LAST_STRIDE)
     if resume:
         from utils.get_last_stats import get_last_stats
         checkpoints = get_last_stats(output_dir, ['net', 'opt', 'sch', 'epo'])
@@ -209,8 +210,14 @@ def train(config_file, resume=False, **kwargs):
 
             optimizer.zero_grad()
 
-            scores = model(images)
-            loss = loss_fn(scores, labels)
+            if cfg.SOLVER.LOSS == 'softmax':
+                scores = model(images)
+                loss = softmax(scores, labels)
+            else:
+                scores,feats = model(images)
+                loss1 = softmax(scores, labels)
+                loss2 = triplet(feats, labels)[0]
+                loss = loss1 + loss2
 
             loss.backward()
             optimizer.step()
