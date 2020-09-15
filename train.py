@@ -10,6 +10,7 @@ from evaluation import evaluation
 from datasets import Person_ReID_Dataset_Downloader
 from torch import optim
 from torch.optim import lr_scheduler
+from scheduler import make_scheduler
 from loss import CrossEntropyLabelSmooth, TripletLoss
 from torchvision import transforms
 from torch.utils.data import DataLoader
@@ -148,7 +149,7 @@ def train(config_file, resume=False, **kwargs):
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    logger = make_logger("Reid_Baseline", output_dir,'log', resume)
+    logger = make_logger("Reid_Generalization", output_dir,'log', resume)
     if not resume:
         logger.info("Using {} GPUS".format(1))
         logger.info("Loaded configuration file {}".format(config_file))
@@ -161,12 +162,8 @@ def train(config_file, resume=False, **kwargs):
     epochs = cfg.SOLVER.MAX_EPOCHS
 
     train_loader, _, num_query, num_classes = data_loader(cfg,cfg.DATASETS.SOURCE, merge=cfg.DATASETS.MERGE)
-    # _, val_loader, _, _ = data_loader(cfg,cfg.DATASETS.TARGET,merge=False)
     val_stats = [data_loader(cfg,(target,),merge=False)[1:3] for target in cfg.DATASETS.TARGET]
 
-    # model = models.init_model(name='mobilenet_ifn', num_classes=num_classes)
-    # optimizer = optim.SGD(model.parameters(), lr=0.01,momentum=0.9, weight_decay=5e-4, nesterov=True)
-    # scheduler = lr_scheduler.StepLR(optimizer, step_size=100, gamma=0.1)
     softmax = CrossEntropyLabelSmooth(num_classes=num_classes, device=cfg.DEVICE)
     triplet = TripletLoss(cfg)
 
@@ -180,10 +177,28 @@ def train(config_file, resume=False, **kwargs):
             model.to(device)  # must be done before the optimizer generation
     ignored_params = list(map(id, model.fn.parameters() ))
     base_params = filter(lambda p: id(p) not in ignored_params, model.parameters())
-    optimizer = optim.SGD([
-                 {'params': base_params, 'lr': 0.1*0.05},
-                 {'params': model.fn.parameters(), 'lr': 0.05}
-    ], weight_decay=5e-4, momentum=0.9, nesterov=True)
+
+    if cfg.SOLVER.OPTIMIZER_NAME == 'SGD':
+        optimizer = optim.SGD([
+                    {'params': base_params, 'lr': cfg.SOLVER.BASE_LR*0.05},
+                    {'params': model.fn.parameters(), 'lr': 0.05}
+        ], weight_decay=cfg.SOLVER.WEIGHT_DECAY, momentum=cfg.SOLVER.MOMENTUM, nesterov=cfg.SOLVER.NESTEROV)
+    else:
+        params = []
+        for key, value in model.named_parameters():
+            if not value.requires_grad:
+                continue
+            lr = cfg.SOLVER.BASE_LR
+            weight_decay = cfg.SOLVER.WEIGHT_DECAY
+            if "bias" in key:
+                lr = cfg.SOLVER.BASE_LR * cfg.SOLVER.BIAS_LR_FACTOR
+                weight_decay = cfg.SOLVER.WEIGHT_DECAY_BIAS
+            params += [{"params": [value], "lr": lr, "weight_decay": weight_decay}]
+        optimizer = getattr(torch.optim, cfg.SOLVER.OPTIMIZER_NAME)(params)
+    
+    scheduler = make_scheduler(cfg,optimizer)
+
+
     scheduler = lr_scheduler.StepLR(optimizer, step_size=40, gamma=0.1)
 
     base_epo = 0
