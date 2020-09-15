@@ -120,6 +120,7 @@ class ResNet(nn.Module):
 
     def __init__(self, num_classes, loss, block, layers,
                  last_stride=2,
+                 pool = 'AVG',
                  fc_dims=None,
                  dropout_p=None,
                  **kwargs):
@@ -138,7 +139,10 @@ class ResNet(nn.Module):
         self.layer3 = self._make_layer(block, 256, layers[2], stride=2,IN=True)
         self.layer4 = self._make_layer(block, 512, layers[3], stride=last_stride)
 
-        self.global_avgpool = nn.AdaptiveAvgPool2d(1)
+        if pool = 'AVG':
+            self.gap = nn.AdaptiveAvgPool2d(1)
+        else:
+            self.gap = nn.AdaptiveMaxPool2d(1)
         self.fn = nn.BatchNorm1d(self.feature_dim)
         self.fn.bias.requires_grad_(False)  # no shift
         self.classifier = nn.Linear(self.feature_dim, num_classes, bias=False)
@@ -220,7 +224,7 @@ class ResNet(nn.Module):
 
     def forward(self, x):
         f = self.featuremaps(x)
-        v = self.global_avgpool(f)
+        v = self.gap(f)
         v = v.view(v.size(0), -1)
 
         v = self.fn(v)
