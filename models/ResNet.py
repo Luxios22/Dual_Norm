@@ -130,7 +130,7 @@ class ResNet(nn.Module):
         self.layer3 = self._make_layer(block, 256, layers[2], stride=2)
         self.layer4 = self._make_layer(block, 512, layers[3], stride=last_stride)
 
-        if pool = 'AVG':
+        if pool == 'AVG':
             self.gap = nn.AdaptiveAvgPool2d(1)
         else:
             self.gap = nn.AdaptiveMaxPool2d(1)
