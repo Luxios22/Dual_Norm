@@ -198,9 +198,6 @@ def train(config_file, resume=False, **kwargs):
     
     scheduler = make_scheduler(cfg,optimizer)
 
-
-    scheduler = lr_scheduler.StepLR(optimizer, step_size=40, gamma=0.1)
-
     base_epo = 0
     if resume:
         optimizer.load_state_dict(torch.load(checkpoints['opt']))
