@@ -1,11 +1,17 @@
 try:
     import tensorflow as tf
     import tensorflow.keras as keras
+    from tensorflow.python.keras import backend
+    from tensorflow.python.keras.engine import training
+    from tensorflow.python.keras.applications import imagenet_utils
+    from tensorflow.python.lib.io import file_io
     from tensorflow.python.keras.utils import data_utils, layer_utils
     import tensorflow_addons as tfa
 except ImportError:
     print("\nPlease run `pip install -r requirements_tf.txt`\n")
     raise
+
+from layers import BatchNormZeroBias
 
 BASE_WEIGHTS_PATH = ('https://storage.googleapis.com/tensorflow/keras-applications/resnet/')
 
@@ -59,7 +65,7 @@ def ResNetIFN(stack_fn,
             has to be `(224, 224, 3)` (with `channels_last` data format)
             or `(3, 224, 224)` (with `channels_first` data format).
             It should have exactly 3 inputs channels.
-            pooling: optional pooling mode for feature extraction
+        pooling: optional pooling mode for feature extraction
             when `include_top` is `False`.
             - `None` means that the output of the model will be
                 the 4D tensor output of the
@@ -73,7 +79,7 @@ def ResNetIFN(stack_fn,
         classes: optional number of classes to classify images
             into, only to be specified if `include_top` is True, and
             if no `weights` argument is specified.
-            classifier_activation: A `str` or callable. The activation function to use
+        classifier_activation: A `str` or callable. The activation function to use
             on the "top" layer. Ignored unless `include_top=True`. Set
             `classifier_activation=None` to return the logits of the "top" layer.
     Returns:
@@ -107,9 +113,9 @@ def ResNetIFN(stack_fn,
         img_input = keras.layers.Input(shape=input_shape)
     else:
         if not backend.is_keras_tensor(input_tensor):
-        img_input = keras.layers.Input(tensor=input_tensor, shape=input_shape)
+            img_input = keras.layers.Input(tensor=input_tensor, shape=input_shape)
         else:
-        img_input = input_tensor
+            img_input = input_tensor
 
     bn_axis = 3 if backend.image_data_format() == 'channels_last' else 1
 
@@ -135,21 +141,23 @@ def ResNetIFN(stack_fn,
 
     if include_top:
         x = keras.layers.GlobalAveragePooling2D(name='avg_pool')(x)
-        x = keras.layers.BatchNormalization(axis=channels_axis,
-                                            epsilon=1e-5,
-                                            momentum=0.9)(x)
+        # Use custom BatchNorm class to implement zero bias BN
+        x = BatchNormZeroBias(axis=bn_axis,
+                              epsilon=1e-5,
+                              momentum=0.9)(x) 
         x = keras.layers.Dense(classes,
                                activation=classifier_activation,
                                name='predictions',
                                use_bias=False)(x)
     else:
         if pooling == 'avg':
-        x = keras.layers.GlobalAveragePooling2D(name='avg_pool')(x)
+            x = keras.layers.GlobalAveragePooling2D(name='avg_pool')(x)
         elif pooling == 'max':
-        x = keras.layers.GlobalMaxPooling2D(name='max_pool')(x)
-        x = keras.layers.BatchNormalization(axis=channels_axis,
-                                            epsilon=1e-5,
-                                            momentum=0.9)(x)
+            x = keras.layers.GlobalMaxPooling2D(name='max_pool')(x)
+            # Use custom BatchNorm class to implement zero bias BN
+            x = BatchNormZeroBias(axis=bn_axis,
+                                  epsilon=1e-5,
+                                  momentum=0.9)(x)
 
     # Ensure that the model takes into account
     # any potential predecessors of `input_tensor`.
@@ -164,16 +172,15 @@ def ResNetIFN(stack_fn,
     # Load weights.
     if (weights == 'imagenet') and (model_name in WEIGHTS_HASHES):
         if include_top:
-        file_name = model_name + '_weights_tf_dim_ordering_tf_kernels.h5'
-        file_hash = WEIGHTS_HASHES[model_name][0]
+            file_name = model_name + '_weights_tf_dim_ordering_tf_kernels.h5'
+            file_hash = WEIGHTS_HASHES[model_name][0]
         else:
-        file_name = model_name + '_weights_tf_dim_ordering_tf_kernels_notop.h5'
-        file_hash = WEIGHTS_HASHES[model_name][1]
-        weights_path = data_utils.get_file(
-            file_name,
-            BASE_WEIGHTS_PATH + file_name,
-            cache_subdir='models',
-            file_hash=file_hash)
+            file_name = model_name + '_weights_tf_dim_ordering_tf_kernels_notop.h5'
+            file_hash = WEIGHTS_HASHES[model_name][1]
+        weights_path = data_utils.get_file(file_name,
+                                           BASE_WEIGHTS_PATH + file_name,
+                                           cache_subdir='models',
+                                           file_hash=file_hash)
         model.load_weights(weights_path)
     elif weights is not None:
         model.load_weights(weights)
