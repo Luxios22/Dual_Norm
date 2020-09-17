@@ -13,6 +13,7 @@ from .cuhk_sysu import CUHK_SYSU
 from .combined import Combined
 from collections import OrderedDict
 from .ntu_outdoor_night_v1 import NTU_Outdoor_Night_V1
+from .ntu_outdoor_night_v1_enlighten import NTU_Outdoor_Night_V1_Enlighten
 
 
 __factory = {
@@ -26,7 +27,8 @@ __factory = {
     'i-LIDS': Random_iLIDS,
     'CUHK02': CUHK02,
     'CUHK-SYSU': CUHK_SYSU,
-    'NTU_Outdoor_Night_V1': NTU_Outdoor_Night_V1
+    'NTU_Outdoor_Night_V1': NTU_Outdoor_Night_V1,
+    'NTU_Outdoor_Night_V1_Enlighten': NTU_Outdoor_Night_V1_Enlighten
 }
 
 def get_names():
