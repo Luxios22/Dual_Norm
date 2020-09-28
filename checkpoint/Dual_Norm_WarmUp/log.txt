@@ -1,15 +1,15 @@
-2020-09-15 13:46:11,365 Reid_Generalization INFO: Using 1 GPUS
-2020-09-15 13:46:11,366 Reid_Generalization INFO: Loaded configuration file config/dual_norm_warmup.yaml
-2020-09-15 13:46:11,366 Reid_Generalization INFO: Running with config:
+2020-09-15 07:33:20,469 Reid_Generalization INFO: Using 1 GPUS
+2020-09-15 07:33:20,469 Reid_Generalization INFO: Loaded configuration file config/dual_norm_warmup.yaml
+2020-09-15 07:33:20,469 Reid_Generalization INFO: Running with config:
 DATALOADER:
   NUM_INSTANCE: 32
   NUM_WORKERS: 8
 DATASETS:
   MERGE: True
   SOURCE: ['Market-1501', 'DukeMTMC-reID', 'CUHK03', 'CUHK02', 'CUHK-SYSU']
-  STORE_DIR: /Users/linshan/Pictures/Person_ReID_Datasets
+  STORE_DIR: ../dsta/Datasets
   TARGET: ['MSMT17_V2']
-DEVICE: cpu
+DEVICE: cuda:2
 INPUT:
   BRIGHTNESS: 0.0
   CONTRAST: 0.0
@@ -66,4 +66,206 @@ SOLVER:
 TEST:
   IMS_PER_BATCH: 256
   LOAD_EPOCH: 160
-2020-09-15 13:46:14,807 Reid_Generalization INFO: Start training
+2020-09-15 07:33:26,005 Reid_Generalization INFO: Start training
+2020-09-15 07:40:43,193 Reid_Generalization INFO: Epoch[1] Iteration[1947/1947] Loss: 9.864, Acc: 0.011, Base Lr: 5.00e-05
+2020-09-15 07:48:13,340 Reid_Generalization INFO: Epoch[2] Iteration[1947/1947] Loss: 9.209, Acc: 0.047, Base Lr: 5.45e-04
+2020-09-15 07:55:35,727 Reid_Generalization INFO: Epoch[3] Iteration[1947/1947] Loss: 7.679, Acc: 0.133, Base Lr: 1.04e-03
+2020-09-15 08:04:28,898 Reid_Generalization INFO: Epoch[4] Iteration[1947/1947] Loss: 6.166, Acc: 0.316, Base Lr: 1.54e-03
+2020-09-15 08:16:20,389 Reid_Generalization INFO: Epoch[5] Iteration[1947/1947] Loss: 5.021, Acc: 0.473, Base Lr: 2.03e-03
+2020-09-15 08:23:40,700 Reid_Generalization INFO: Epoch[6] Iteration[1947/1947] Loss: 4.114, Acc: 0.592, Base Lr: 2.53e-03
+2020-09-15 08:31:04,846 Reid_Generalization INFO: Epoch[7] Iteration[1947/1947] Loss: 3.308, Acc: 0.698, Base Lr: 3.02e-03
+2020-09-15 08:38:26,741 Reid_Generalization INFO: Epoch[8] Iteration[1947/1947] Loss: 2.588, Acc: 0.812, Base Lr: 3.52e-03
+2020-09-15 08:45:43,721 Reid_Generalization INFO: Epoch[9] Iteration[1947/1947] Loss: 2.067, Acc: 0.911, Base Lr: 4.01e-03
+2020-09-15 08:53:08,355 Reid_Generalization INFO: Epoch[10] Iteration[1947/1947] Loss: 1.778, Acc: 0.970, Base Lr: 4.51e-03
+2020-09-15 09:00:59,953 Reid_Generalization INFO: Epoch[11] Iteration[1947/1947] Loss: 1.653, Acc: 0.985, Base Lr: 5.00e-03
+2020-09-15 09:15:52,990 Reid_Generalization INFO: Epoch[12] Iteration[1947/1947] Loss: 1.585, Acc: 0.991, Base Lr: 5.00e-03
+2020-09-15 09:23:11,145 Reid_Generalization INFO: Epoch[13] Iteration[1947/1947] Loss: 1.549, Acc: 0.994, Base Lr: 5.00e-03
+2020-09-15 09:30:33,962 Reid_Generalization INFO: Epoch[14] Iteration[1947/1947] Loss: 1.526, Acc: 0.996, Base Lr: 5.00e-03
+2020-09-15 09:37:57,441 Reid_Generalization INFO: Epoch[15] Iteration[1947/1947] Loss: 1.508, Acc: 0.997, Base Lr: 5.00e-03
+2020-09-15 09:45:20,425 Reid_Generalization INFO: Epoch[16] Iteration[1947/1947] Loss: 1.496, Acc: 0.997, Base Lr: 5.00e-03
+2020-09-15 09:52:36,308 Reid_Generalization INFO: Epoch[17] Iteration[1947/1947] Loss: 1.487, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 09:59:51,851 Reid_Generalization INFO: Epoch[18] Iteration[1947/1947] Loss: 1.479, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 10:11:53,895 Reid_Generalization INFO: Epoch[19] Iteration[1947/1947] Loss: 1.472, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 10:19:24,874 Reid_Generalization INFO: Epoch[20] Iteration[1947/1947] Loss: 1.474, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 11:46:43,561 Reid_Generalization INFO: Validation Results: MSMT17_V2 - Epoch: 20
+2020-09-15 11:46:43,566 Reid_Generalization INFO: mAP: 14.2%
+2020-09-15 11:46:43,567 Reid_Generalization INFO: CMC curve, Rank-1  :37.0%
+2020-09-15 11:46:43,567 Reid_Generalization INFO: CMC curve, Rank-5  :50.0%
+2020-09-15 11:46:43,567 Reid_Generalization INFO: CMC curve, Rank-10 :55.7%
+2020-09-15 11:53:46,233 Reid_Generalization INFO: Epoch[21] Iteration[1947/1947] Loss: 1.468, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 12:01:41,415 Reid_Generalization INFO: Epoch[22] Iteration[1947/1947] Loss: 1.462, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 12:16:47,952 Reid_Generalization INFO: Epoch[23] Iteration[1947/1947] Loss: 1.459, Acc: 0.999, Base Lr: 5.00e-03
+2020-09-15 12:24:04,147 Reid_Generalization INFO: Epoch[24] Iteration[1947/1947] Loss: 1.468, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 12:31:19,938 Reid_Generalization INFO: Epoch[25] Iteration[1947/1947] Loss: 1.465, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 12:38:36,533 Reid_Generalization INFO: Epoch[26] Iteration[1947/1947] Loss: 1.456, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 12:45:52,584 Reid_Generalization INFO: Epoch[27] Iteration[1947/1947] Loss: 1.454, Acc: 0.999, Base Lr: 5.00e-03
+2020-09-15 12:53:06,895 Reid_Generalization INFO: Epoch[28] Iteration[1947/1947] Loss: 1.467, Acc: 0.997, Base Lr: 5.00e-03
+2020-09-15 13:00:45,230 Reid_Generalization INFO: Epoch[29] Iteration[1947/1947] Loss: 1.458, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 13:14:48,465 Reid_Generalization INFO: Epoch[30] Iteration[1947/1947] Loss: 1.452, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 13:22:11,946 Reid_Generalization INFO: Epoch[31] Iteration[1947/1947] Loss: 1.450, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 13:29:30,170 Reid_Generalization INFO: Epoch[32] Iteration[1947/1947] Loss: 1.443, Acc: 0.999, Base Lr: 5.00e-03
+2020-09-15 13:36:46,575 Reid_Generalization INFO: Epoch[33] Iteration[1947/1947] Loss: 1.458, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 13:44:03,816 Reid_Generalization INFO: Epoch[34] Iteration[1947/1947] Loss: 1.461, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 13:51:22,967 Reid_Generalization INFO: Epoch[35] Iteration[1947/1947] Loss: 1.455, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 13:58:40,325 Reid_Generalization INFO: Epoch[36] Iteration[1947/1947] Loss: 1.451, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 14:10:12,860 Reid_Generalization INFO: Epoch[37] Iteration[1947/1947] Loss: 1.460, Acc: 0.997, Base Lr: 5.00e-03
+2020-09-15 14:19:11,410 Reid_Generalization INFO: Epoch[38] Iteration[1947/1947] Loss: 1.439, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 14:26:24,447 Reid_Generalization INFO: Epoch[39] Iteration[1947/1947] Loss: 1.444, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 14:33:38,325 Reid_Generalization INFO: Epoch[40] Iteration[1947/1947] Loss: 1.442, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-15 15:58:53,736 Reid_Generalization INFO: Validation Results: MSMT17_V2 - Epoch: 40
+2020-09-15 15:58:53,741 Reid_Generalization INFO: mAP: 15.0%
+2020-09-15 15:58:53,741 Reid_Generalization INFO: CMC curve, Rank-1  :37.9%
+2020-09-15 15:58:53,741 Reid_Generalization INFO: CMC curve, Rank-5  :51.5%
+2020-09-15 15:58:53,741 Reid_Generalization INFO: CMC curve, Rank-10 :57.1%
+2020-09-15 16:15:38,655 Reid_Generalization INFO: Epoch[41] Iteration[1947/1947] Loss: 1.392, Acc: 0.999, Base Lr: 5.00e-04
+2020-09-15 16:22:53,834 Reid_Generalization INFO: Epoch[42] Iteration[1947/1947] Loss: 1.389, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 16:30:04,262 Reid_Generalization INFO: Epoch[43] Iteration[1947/1947] Loss: 1.392, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 16:37:16,314 Reid_Generalization INFO: Epoch[44] Iteration[1947/1947] Loss: 1.394, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 16:44:31,520 Reid_Generalization INFO: Epoch[45] Iteration[1947/1947] Loss: 1.394, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 16:51:40,495 Reid_Generalization INFO: Epoch[46] Iteration[1947/1947] Loss: 1.395, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 16:58:49,222 Reid_Generalization INFO: Epoch[47] Iteration[1947/1947] Loss: 1.394, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 17:11:17,878 Reid_Generalization INFO: Epoch[48] Iteration[1947/1947] Loss: 1.394, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 17:19:26,955 Reid_Generalization INFO: Epoch[49] Iteration[1947/1947] Loss: 1.393, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 17:26:38,707 Reid_Generalization INFO: Epoch[50] Iteration[1947/1947] Loss: 1.393, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 17:33:55,551 Reid_Generalization INFO: Epoch[51] Iteration[1947/1947] Loss: 1.392, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 17:41:03,478 Reid_Generalization INFO: Epoch[52] Iteration[1947/1947] Loss: 1.392, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 17:48:14,100 Reid_Generalization INFO: Epoch[53] Iteration[1947/1947] Loss: 1.392, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 17:55:28,282 Reid_Generalization INFO: Epoch[54] Iteration[1947/1947] Loss: 1.392, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 18:03:57,597 Reid_Generalization INFO: Epoch[55] Iteration[1947/1947] Loss: 1.391, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 18:15:24,483 Reid_Generalization INFO: Epoch[56] Iteration[1947/1947] Loss: 1.391, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 18:22:37,168 Reid_Generalization INFO: Epoch[57] Iteration[1947/1947] Loss: 1.390, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 18:29:47,261 Reid_Generalization INFO: Epoch[58] Iteration[1947/1947] Loss: 1.390, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 18:36:53,723 Reid_Generalization INFO: Epoch[59] Iteration[1947/1947] Loss: 1.390, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 18:44:01,354 Reid_Generalization INFO: Epoch[60] Iteration[1947/1947] Loss: 1.390, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 20:09:06,033 Reid_Generalization INFO: Validation Results: MSMT17_V2 - Epoch: 60
+2020-09-15 20:09:06,138 Reid_Generalization INFO: mAP: 16.3%
+2020-09-15 20:09:06,139 Reid_Generalization INFO: CMC curve, Rank-1  :40.0%
+2020-09-15 20:09:06,139 Reid_Generalization INFO: CMC curve, Rank-5  :52.7%
+2020-09-15 20:09:06,139 Reid_Generalization INFO: CMC curve, Rank-10 :58.5%
+2020-09-15 20:17:35,283 Reid_Generalization INFO: Epoch[61] Iteration[1947/1947] Loss: 1.389, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 20:24:45,487 Reid_Generalization INFO: Epoch[62] Iteration[1947/1947] Loss: 1.389, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 20:31:58,797 Reid_Generalization INFO: Epoch[63] Iteration[1947/1947] Loss: 1.388, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 20:39:17,466 Reid_Generalization INFO: Epoch[64] Iteration[1947/1947] Loss: 1.388, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 20:46:34,302 Reid_Generalization INFO: Epoch[65] Iteration[1947/1947] Loss: 1.388, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 20:53:52,000 Reid_Generalization INFO: Epoch[66] Iteration[1947/1947] Loss: 1.388, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 21:01:17,742 Reid_Generalization INFO: Epoch[67] Iteration[1947/1947] Loss: 1.388, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 21:13:12,866 Reid_Generalization INFO: Epoch[68] Iteration[1947/1947] Loss: 1.388, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 21:20:35,308 Reid_Generalization INFO: Epoch[69] Iteration[1947/1947] Loss: 1.387, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 21:27:53,583 Reid_Generalization INFO: Epoch[70] Iteration[1947/1947] Loss: 1.386, Acc: 1.000, Base Lr: 5.00e-04
+2020-09-15 21:35:16,996 Reid_Generalization INFO: Epoch[71] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 21:42:35,033 Reid_Generalization INFO: Epoch[72] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 21:49:53,949 Reid_Generalization INFO: Epoch[73] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 21:57:10,974 Reid_Generalization INFO: Epoch[74] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 22:09:22,574 Reid_Generalization INFO: Epoch[75] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 22:19:40,419 Reid_Generalization INFO: Epoch[76] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 22:27:00,634 Reid_Generalization INFO: Epoch[77] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 22:34:19,566 Reid_Generalization INFO: Epoch[78] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 22:41:33,084 Reid_Generalization INFO: Epoch[79] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-15 22:48:48,199 Reid_Generalization INFO: Epoch[80] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 00:13:10,572 Reid_Generalization INFO: Validation Results: MSMT17_V2 - Epoch: 80
+2020-09-16 00:13:10,632 Reid_Generalization INFO: mAP: 16.4%
+2020-09-16 00:13:10,632 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2020-09-16 00:13:10,632 Reid_Generalization INFO: CMC curve, Rank-5  :52.8%
+2020-09-16 00:13:10,632 Reid_Generalization INFO: CMC curve, Rank-10 :58.6%
+2020-09-16 00:33:12,692 Reid_Generalization INFO: Epoch[81] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 00:40:23,452 Reid_Generalization INFO: Epoch[82] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 00:47:37,024 Reid_Generalization INFO: Epoch[83] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 00:54:54,407 Reid_Generalization INFO: Epoch[84] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 01:03:11,308 Reid_Generalization INFO: Epoch[85] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 01:16:22,266 Reid_Generalization INFO: Epoch[86] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 01:23:41,930 Reid_Generalization INFO: Epoch[87] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 01:31:01,512 Reid_Generalization INFO: Epoch[88] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 01:38:20,936 Reid_Generalization INFO: Epoch[89] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 01:45:43,312 Reid_Generalization INFO: Epoch[90] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 01:53:05,363 Reid_Generalization INFO: Epoch[91] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 02:00:26,384 Reid_Generalization INFO: Epoch[92] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 02:13:36,869 Reid_Generalization INFO: Epoch[93] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 02:20:59,729 Reid_Generalization INFO: Epoch[94] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 02:28:19,386 Reid_Generalization INFO: Epoch[95] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 02:35:39,593 Reid_Generalization INFO: Epoch[96] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 02:43:00,819 Reid_Generalization INFO: Epoch[97] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 02:50:20,837 Reid_Generalization INFO: Epoch[98] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 02:57:40,829 Reid_Generalization INFO: Epoch[99] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 03:12:50,181 Reid_Generalization INFO: Epoch[100] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 04:40:04,138 Reid_Generalization INFO: Validation Results: MSMT17_V2 - Epoch: 100
+2020-09-16 04:40:04,141 Reid_Generalization INFO: mAP: 16.3%
+2020-09-16 04:40:04,141 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2020-09-16 04:40:04,141 Reid_Generalization INFO: CMC curve, Rank-5  :52.7%
+2020-09-16 04:40:04,141 Reid_Generalization INFO: CMC curve, Rank-10 :58.6%
+2020-09-16 04:47:06,412 Reid_Generalization INFO: Epoch[101] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 04:54:11,638 Reid_Generalization INFO: Epoch[102] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 05:01:21,344 Reid_Generalization INFO: Epoch[103] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 05:12:36,057 Reid_Generalization INFO: Epoch[104] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 05:19:56,465 Reid_Generalization INFO: Epoch[105] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 05:27:11,203 Reid_Generalization INFO: Epoch[106] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 05:34:29,506 Reid_Generalization INFO: Epoch[107] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 05:41:43,863 Reid_Generalization INFO: Epoch[108] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 05:48:57,564 Reid_Generalization INFO: Epoch[109] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 05:56:11,455 Reid_Generalization INFO: Epoch[110] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 06:05:53,746 Reid_Generalization INFO: Epoch[111] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 06:18:06,296 Reid_Generalization INFO: Epoch[112] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 06:25:22,268 Reid_Generalization INFO: Epoch[113] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 06:32:35,759 Reid_Generalization INFO: Epoch[114] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 06:39:49,496 Reid_Generalization INFO: Epoch[115] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 06:47:03,839 Reid_Generalization INFO: Epoch[116] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 06:54:17,727 Reid_Generalization INFO: Epoch[117] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 07:02:14,722 Reid_Generalization INFO: Epoch[118] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 07:16:11,507 Reid_Generalization INFO: Epoch[119] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 07:23:25,008 Reid_Generalization INFO: Epoch[120] Iteration[1947/1947] Loss: 1.385, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 08:49:18,481 Reid_Generalization INFO: Validation Results: MSMT17_V2 - Epoch: 120
+2020-09-16 08:49:18,488 Reid_Generalization INFO: mAP: 16.2%
+2020-09-16 08:49:18,488 Reid_Generalization INFO: CMC curve, Rank-1  :39.8%
+2020-09-16 08:49:18,488 Reid_Generalization INFO: CMC curve, Rank-5  :52.7%
+2020-09-16 08:49:18,488 Reid_Generalization INFO: CMC curve, Rank-10 :58.4%
+2020-09-16 08:56:18,042 Reid_Generalization INFO: Epoch[121] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 09:03:56,015 Reid_Generalization INFO: Epoch[122] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 09:14:48,763 Reid_Generalization INFO: Epoch[123] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 09:21:58,336 Reid_Generalization INFO: Epoch[124] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 09:29:07,493 Reid_Generalization INFO: Epoch[125] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 09:36:19,547 Reid_Generalization INFO: Epoch[126] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 09:43:33,461 Reid_Generalization INFO: Epoch[127] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 09:50:47,050 Reid_Generalization INFO: Epoch[128] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 09:58:02,960 Reid_Generalization INFO: Epoch[129] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 10:14:52,036 Reid_Generalization INFO: Epoch[130] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 10:22:13,708 Reid_Generalization INFO: Epoch[131] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 10:29:28,526 Reid_Generalization INFO: Epoch[132] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 10:36:44,831 Reid_Generalization INFO: Epoch[133] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 10:43:59,651 Reid_Generalization INFO: Epoch[134] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 10:51:13,325 Reid_Generalization INFO: Epoch[135] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 10:58:32,335 Reid_Generalization INFO: Epoch[136] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 11:14:07,570 Reid_Generalization INFO: Epoch[137] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 11:21:20,703 Reid_Generalization INFO: Epoch[138] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 11:28:32,074 Reid_Generalization INFO: Epoch[139] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 11:35:43,251 Reid_Generalization INFO: Epoch[140] Iteration[1947/1947] Loss: 1.383, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 12:59:22,132 Reid_Generalization INFO: Validation Results: MSMT17_V2 - Epoch: 140
+2020-09-16 12:59:22,138 Reid_Generalization INFO: mAP: 16.1%
+2020-09-16 12:59:22,138 Reid_Generalization INFO: CMC curve, Rank-1  :39.6%
+2020-09-16 12:59:22,138 Reid_Generalization INFO: CMC curve, Rank-5  :52.6%
+2020-09-16 12:59:22,138 Reid_Generalization INFO: CMC curve, Rank-10 :58.0%
+2020-09-16 13:10:16,924 Reid_Generalization INFO: Epoch[141] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 13:18:52,443 Reid_Generalization INFO: Epoch[142] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 13:25:51,000 Reid_Generalization INFO: Epoch[143] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 13:32:49,115 Reid_Generalization INFO: Epoch[144] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 13:39:47,526 Reid_Generalization INFO: Epoch[145] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 13:46:44,829 Reid_Generalization INFO: Epoch[146] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 13:53:41,599 Reid_Generalization INFO: Epoch[147] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 14:01:12,278 Reid_Generalization INFO: Epoch[148] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 14:16:49,723 Reid_Generalization INFO: Epoch[149] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 14:23:51,711 Reid_Generalization INFO: Epoch[150] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 14:30:56,290 Reid_Generalization INFO: Epoch[151] Iteration[1947/1947] Loss: 1.383, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 14:37:57,151 Reid_Generalization INFO: Epoch[152] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 14:44:58,261 Reid_Generalization INFO: Epoch[153] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 14:51:58,945 Reid_Generalization INFO: Epoch[154] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 14:59:01,947 Reid_Generalization INFO: Epoch[155] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 15:09:49,709 Reid_Generalization INFO: Epoch[156] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 15:18:03,580 Reid_Generalization INFO: Epoch[157] Iteration[1947/1947] Loss: 1.383, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 15:25:04,579 Reid_Generalization INFO: Epoch[158] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 15:32:04,246 Reid_Generalization INFO: Epoch[159] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 15:39:05,531 Reid_Generalization INFO: Epoch[160] Iteration[1947/1947] Loss: 1.384, Acc: 1.000, Base Lr: 5.00e-05
+2020-09-16 17:02:33,511 Reid_Generalization INFO: Validation Results: MSMT17_V2 - Epoch: 160
+2020-09-16 17:02:33,540 Reid_Generalization INFO: mAP: 16.2%
+2020-09-16 17:02:33,541 Reid_Generalization INFO: CMC curve, Rank-1  :39.8%
+2020-09-16 17:02:33,541 Reid_Generalization INFO: CMC curve, Rank-5  :52.8%
+2020-09-16 17:02:33,541 Reid_Generalization INFO: CMC curve, Rank-10 :58.3%
+2020-09-16 17:02:33,541 Reid_Generalization INFO: Training complete in 2009m 8s
+2020-09-16 17:02:33,541 Reid_Generalization INFO: ----------

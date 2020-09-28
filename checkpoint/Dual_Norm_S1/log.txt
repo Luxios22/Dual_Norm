@@ -1,0 +1,152 @@
+2020-09-07 07:02:57,664 Reid_Baseline INFO: Using 1 GPUS
+2020-09-07 07:02:57,664 Reid_Baseline INFO: Loaded configuration file config/dual_norm_s1.yaml
+2020-09-07 07:02:57,665 Reid_Baseline INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 32
+  NUM_WORKERS: 8
+DATASETS:
+  MERGE: True
+  SOURCE: ['Market-1501', 'DukeMTMC-reID', 'CUHK03', 'CUHK02', 'CUHK-SYSU']
+  STORE_DIR: ../dsta/Datasets
+  TARGET: ['MSMT17_V2']
+DEVICE: cuda:2
+INPUT:
+  BRIGHTNESS: 0.0
+  CONTRAST: 0.0
+  HF_PROB: 0.5
+  HUE: 0.0
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+  RE: False
+  RE_PROB: 0.5
+  SATURATION: 0.0
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  CLASS_PARAM: 1.0
+  D_PARAM: 1.0
+  G_PARAM: 1.0
+  LAST_STRIDE: 1
+  NAME: resnet50_ifn
+  POOL: AVG
+OUTPUT_DIR: ./checkpoint/Dual_Norm_S1
+RE_RANKING: False
+SOLVER:
+  BASE_LR: 0.0003
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 20
+  EVAL_PERIOD: 1
+  GAMMA: 0.1
+  IMS_PER_BATCH: 64
+  LAMBDA1: 1.0
+  LAMBDA2: 1.0
+  LOSS: softmax
+  MARGIN: 0.3
+  MAX_EPOCHS: 160
+  MOMENTUM: 0.9
+  NESTEROV: True
+  OPTIMIZER_NAME: Adam
+  STEP: 40
+  WARMUP: True
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WARMUP_STEPS: [30, 55]
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  IMS_PER_BATCH: 256
+  LOAD_EPOCH: 100
+2020-09-07 07:03:06,000 Reid_Baseline INFO: Start training
+2020-09-07 07:11:35,484 Reid_Baseline INFO: Epoch[1] Iteration[1947/1947] Loss: 7.108, Acc: 0.204, Base Lr: 5.00e-03
+2020-09-07 08:41:27,147 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 1
+2020-09-07 08:41:27,148 Reid_Baseline INFO: mAP: 7.8%
+2020-09-07 08:41:27,148 Reid_Baseline INFO: CMC curve, Rank-1  :24.9%
+2020-09-07 08:41:27,148 Reid_Baseline INFO: CMC curve, Rank-5  :37.5%
+2020-09-07 08:41:27,149 Reid_Baseline INFO: CMC curve, Rank-10 :43.7%
+2020-09-07 08:49:47,134 Reid_Baseline INFO: Epoch[2] Iteration[1947/1947] Loss: 4.321, Acc: 0.548, Base Lr: 5.00e-03
+2020-09-07 10:19:33,764 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 2
+2020-09-07 10:19:33,765 Reid_Baseline INFO: mAP: 11.3%
+2020-09-07 10:19:33,766 Reid_Baseline INFO: CMC curve, Rank-1  :31.6%
+2020-09-07 10:19:33,766 Reid_Baseline INFO: CMC curve, Rank-5  :44.4%
+2020-09-07 10:19:33,766 Reid_Baseline INFO: CMC curve, Rank-10 :50.9%
+2020-09-07 10:27:47,430 Reid_Baseline INFO: Epoch[3] Iteration[1947/1947] Loss: 2.981, Acc: 0.746, Base Lr: 5.00e-03
+2020-09-07 11:55:55,213 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 3
+2020-09-07 11:55:55,219 Reid_Baseline INFO: mAP: 12.6%
+2020-09-07 11:55:55,219 Reid_Baseline INFO: CMC curve, Rank-1  :33.8%
+2020-09-07 11:55:55,219 Reid_Baseline INFO: CMC curve, Rank-5  :46.6%
+2020-09-07 11:55:55,220 Reid_Baseline INFO: CMC curve, Rank-10 :52.8%
+2020-09-07 12:04:10,577 Reid_Baseline INFO: Epoch[4] Iteration[1947/1947] Loss: 2.139, Acc: 0.900, Base Lr: 5.00e-03
+2020-09-07 13:34:04,885 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 4
+2020-09-07 13:34:04,886 Reid_Baseline INFO: mAP: 12.9%
+2020-09-07 13:34:04,886 Reid_Baseline INFO: CMC curve, Rank-1  :35.3%
+2020-09-07 13:34:04,887 Reid_Baseline INFO: CMC curve, Rank-5  :47.7%
+2020-09-07 13:34:04,887 Reid_Baseline INFO: CMC curve, Rank-10 :53.6%
+2020-09-07 13:42:19,137 Reid_Baseline INFO: Epoch[5] Iteration[1947/1947] Loss: 1.748, Acc: 0.977, Base Lr: 5.00e-03
+2020-09-07 15:10:12,186 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 5
+2020-09-07 15:10:12,187 Reid_Baseline INFO: mAP: 13.3%
+2020-09-07 15:10:12,187 Reid_Baseline INFO: CMC curve, Rank-1  :35.2%
+2020-09-07 15:10:12,187 Reid_Baseline INFO: CMC curve, Rank-5  :48.3%
+2020-09-07 15:10:12,187 Reid_Baseline INFO: CMC curve, Rank-10 :54.2%
+2020-09-07 15:18:25,158 Reid_Baseline INFO: Epoch[6] Iteration[1947/1947] Loss: 1.618, Acc: 0.990, Base Lr: 5.00e-03
+2020-09-07 16:46:24,288 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 6
+2020-09-07 16:46:24,289 Reid_Baseline INFO: mAP: 13.8%
+2020-09-07 16:46:24,290 Reid_Baseline INFO: CMC curve, Rank-1  :36.7%
+2020-09-07 16:46:24,290 Reid_Baseline INFO: CMC curve, Rank-5  :49.2%
+2020-09-07 16:46:24,290 Reid_Baseline INFO: CMC curve, Rank-10 :55.2%
+2020-09-07 16:54:42,109 Reid_Baseline INFO: Epoch[7] Iteration[1947/1947] Loss: 1.564, Acc: 0.994, Base Lr: 5.00e-03
+2020-09-07 18:22:05,243 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 7
+2020-09-07 18:22:05,244 Reid_Baseline INFO: mAP: 13.7%
+2020-09-07 18:22:05,245 Reid_Baseline INFO: CMC curve, Rank-1  :36.1%
+2020-09-07 18:22:05,245 Reid_Baseline INFO: CMC curve, Rank-5  :48.9%
+2020-09-07 18:22:05,245 Reid_Baseline INFO: CMC curve, Rank-10 :55.1%
+2020-09-07 18:30:18,952 Reid_Baseline INFO: Epoch[8] Iteration[1947/1947] Loss: 1.535, Acc: 0.996, Base Lr: 5.00e-03
+2020-09-07 19:57:39,442 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 8
+2020-09-07 19:57:39,443 Reid_Baseline INFO: mAP: 14.0%
+2020-09-07 19:57:39,443 Reid_Baseline INFO: CMC curve, Rank-1  :37.0%
+2020-09-07 19:57:39,443 Reid_Baseline INFO: CMC curve, Rank-5  :49.5%
+2020-09-07 19:57:39,443 Reid_Baseline INFO: CMC curve, Rank-10 :55.4%
+2020-09-07 20:05:55,586 Reid_Baseline INFO: Epoch[9] Iteration[1947/1947] Loss: 1.514, Acc: 0.997, Base Lr: 5.00e-03
+2020-09-07 21:35:42,050 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 9
+2020-09-07 21:35:42,051 Reid_Baseline INFO: mAP: 14.0%
+2020-09-07 21:35:42,051 Reid_Baseline INFO: CMC curve, Rank-1  :37.0%
+2020-09-07 21:35:42,051 Reid_Baseline INFO: CMC curve, Rank-5  :49.5%
+2020-09-07 21:35:42,052 Reid_Baseline INFO: CMC curve, Rank-10 :55.3%
+2020-09-07 21:43:56,304 Reid_Baseline INFO: Epoch[10] Iteration[1947/1947] Loss: 1.500, Acc: 0.997, Base Lr: 5.00e-03
+2020-09-07 23:12:42,190 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 10
+2020-09-07 23:12:42,191 Reid_Baseline INFO: mAP: 13.9%
+2020-09-07 23:12:42,191 Reid_Baseline INFO: CMC curve, Rank-1  :37.3%
+2020-09-07 23:12:42,192 Reid_Baseline INFO: CMC curve, Rank-5  :49.3%
+2020-09-07 23:12:42,192 Reid_Baseline INFO: CMC curve, Rank-10 :55.1%
+2020-09-07 23:20:55,476 Reid_Baseline INFO: Epoch[11] Iteration[1947/1947] Loss: 1.489, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-08 00:49:36,198 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 11
+2020-09-08 00:49:36,199 Reid_Baseline INFO: mAP: 14.2%
+2020-09-08 00:49:36,199 Reid_Baseline INFO: CMC curve, Rank-1  :37.3%
+2020-09-08 00:49:36,200 Reid_Baseline INFO: CMC curve, Rank-5  :49.7%
+2020-09-08 00:49:36,200 Reid_Baseline INFO: CMC curve, Rank-10 :55.5%
+2020-09-08 00:57:50,446 Reid_Baseline INFO: Epoch[12] Iteration[1947/1947] Loss: 1.481, Acc: 0.998, Base Lr: 5.00e-03
+2020-09-08 02:26:34,747 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 12
+2020-09-08 02:26:34,748 Reid_Baseline INFO: mAP: 14.3%
+2020-09-08 02:26:34,748 Reid_Baseline INFO: CMC curve, Rank-1  :37.4%
+2020-09-08 02:26:34,749 Reid_Baseline INFO: CMC curve, Rank-5  :50.1%
+2020-09-08 02:26:34,749 Reid_Baseline INFO: CMC curve, Rank-10 :55.6%
+2020-09-08 02:34:48,577 Reid_Baseline INFO: Epoch[13] Iteration[1947/1947] Loss: 1.473, Acc: 0.999, Base Lr: 5.00e-03
+2020-09-08 04:06:35,598 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 13
+2020-09-08 04:06:35,599 Reid_Baseline INFO: mAP: 14.4%
+2020-09-08 04:06:35,599 Reid_Baseline INFO: CMC curve, Rank-1  :37.4%
+2020-09-08 04:06:35,599 Reid_Baseline INFO: CMC curve, Rank-5  :50.3%
+2020-09-08 04:06:35,599 Reid_Baseline INFO: CMC curve, Rank-10 :55.7%
+2020-09-08 04:14:49,610 Reid_Baseline INFO: Epoch[14] Iteration[1947/1947] Loss: 1.466, Acc: 0.999, Base Lr: 5.00e-03
+2020-09-08 05:46:15,652 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 14
+2020-09-08 05:46:15,653 Reid_Baseline INFO: mAP: 14.6%
+2020-09-08 05:46:15,653 Reid_Baseline INFO: CMC curve, Rank-1  :38.2%
+2020-09-08 05:46:15,653 Reid_Baseline INFO: CMC curve, Rank-5  :50.5%
+2020-09-08 05:46:15,654 Reid_Baseline INFO: CMC curve, Rank-10 :55.8%
+2020-09-08 05:54:27,558 Reid_Baseline INFO: Epoch[15] Iteration[1947/1947] Loss: 1.462, Acc: 0.999, Base Lr: 5.00e-03
+2020-09-08 07:24:35,653 Reid_Baseline INFO: Validation Results: MSMT17_V2 - Epoch: 15
+2020-09-08 07:24:35,654 Reid_Baseline INFO: mAP: 14.8%
+2020-09-08 07:24:35,654 Reid_Baseline INFO: CMC curve, Rank-1  :38.2%
+2020-09-08 07:24:35,655 Reid_Baseline INFO: CMC curve, Rank-5  :50.5%
+2020-09-08 07:24:35,655 Reid_Baseline INFO: CMC curve, Rank-10 :56.2%
+2020-09-08 07:32:50,858 Reid_Baseline INFO: Epoch[16] Iteration[1947/1947] Loss: 1.459, Acc: 0.999, Base Lr: 5.00e-03

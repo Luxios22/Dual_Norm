@@ -1,0 +1,76 @@
+2020-09-16 03:18:43,872 Reid_Baseline INFO: Using 1 GPUS
+2020-09-16 03:18:43,872 Reid_Baseline INFO: Loaded configuration file config/dual_norm_max.yaml
+2020-09-16 03:18:43,873 Reid_Baseline INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 32
+  NUM_WORKERS: 4
+DATASETS:
+  MERGE: True
+  SOURCE: ['Market-1501', 'DukeMTMC-reID', 'CUHK03', 'CUHK02', 'CUHK-SYSU']
+  STORE_DIR: ../dsta/Datasets
+  TARGET: ['MSMT17_V2']
+DEVICE: cuda:0
+INPUT:
+  BRIGHTNESS: 0.0
+  CONTRAST: 0.0
+  HF_PROB: 0.5
+  HUE: 0.0
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+  RE: False
+  RE_PROB: 0.5
+  SATURATION: 0.0
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  CLASS_PARAM: 1.0
+  D_PARAM: 1.0
+  G_PARAM: 1.0
+  LAST_STRIDE: 2
+  NAME: resnet50_ifn
+  POOL: MAX
+OUTPUT_DIR: ./checkpoint/Dual_Norm_Max
+RE_RANKING: False
+SOLVER:
+  BASE_LR: 0.1
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 20
+  DELAY_ITERS: 100
+  ETA_MIN_LR: 3e-07
+  EVAL_PERIOD: 20
+  GAMMA: 0.1
+  IMS_PER_BATCH: 64
+  LAMBDA1: 1.0
+  LAMBDA2: 1.0
+  LOSS: softmax
+  MARGIN: 0.3
+  MAX_EPOCHS: 160
+  MOMENTUM: 0.9
+  NESTEROV: True
+  OPTIMIZER_NAME: SGD
+  SCHED: StepLR
+  STEP: 40
+  TRI:
+    HARD_MINING: True
+    MARGIN: 0.3
+    NORM_FEAT: False
+    SCALE: 1.0
+    USE_COSINE_DIST: False
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WARMUP_STEPS: [30, 55]
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  IMS_PER_BATCH: 256
+  LOAD_EPOCH: 120
+2020-09-16 03:19:12,645 Reid_Baseline INFO: Start testing
+2020-09-16 04:47:14,241 Reid_Baseline INFO: Validation Results: MSMT17_V2
+2020-09-16 04:47:14,244 Reid_Baseline INFO: mAP: 17.2%
+2020-09-16 04:47:14,245 Reid_Baseline INFO: CMC curve, Rank-1  :39.4%
+2020-09-16 04:47:14,245 Reid_Baseline INFO: CMC curve, Rank-5  :53.1%
+2020-09-16 04:47:14,245 Reid_Baseline INFO: CMC curve, Rank-10 :59.0%
+2020-09-16 04:47:14,245 Reid_Baseline INFO: Training complete in 88m 2s
+2020-09-16 04:47:14,245 Reid_Baseline INFO: ----------

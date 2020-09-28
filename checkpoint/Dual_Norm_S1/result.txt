@@ -1,6 +1,6 @@
-2020-09-01 08:00:15,483 Reid_Baseline INFO: Using 1 GPUS
-2020-09-01 08:00:15,484 Reid_Baseline INFO: Loaded configuration file config/dual_norm.yaml
-2020-09-01 08:00:15,484 Reid_Baseline INFO: Running with config:
+2020-09-09 00:03:32,187 Reid_Baseline INFO: Using 1 GPUS
+2020-09-09 00:03:32,187 Reid_Baseline INFO: Loaded configuration file config/dual_norm_s1.yaml
+2020-09-09 00:03:32,188 Reid_Baseline INFO: Running with config:
 DATALOADER:
   NUM_INSTANCE: 32
   NUM_WORKERS: 4
@@ -9,7 +9,7 @@ DATASETS:
   SOURCE: ['Market-1501', 'DukeMTMC-reID', 'CUHK03', 'CUHK02', 'CUHK-SYSU']
   STORE_DIR: ../dsta/Datasets
   TARGET: ['MSMT17_V2']
-DEVICE: cuda:0
+DEVICE: cuda:1
 INPUT:
   BRIGHTNESS: 0.0
   CONTRAST: 0.0
@@ -30,7 +30,7 @@ MODEL:
   LAST_STRIDE: 1
   NAME: resnet50_ifn
   POOL: AVG
-OUTPUT_DIR: ./checkpoint/Dual_Norm
+OUTPUT_DIR: ./checkpoint/Dual_Norm_S1
 RE_RANKING: False
 SOLVER:
   BASE_LR: 0.0003
@@ -48,6 +48,12 @@ SOLVER:
   NESTEROV: True
   OPTIMIZER_NAME: Adam
   STEP: 40
+  TRI:
+    HARD_MINING: True
+    MARGIN: 0.3
+    NORM_FEAT: False
+    SCALE: 1.0
+    USE_COSINE_DIST: False
   WARMUP: True
   WARMUP_FACTOR: 0.3333333333333333
   WARMUP_ITERS: 500
@@ -57,12 +63,12 @@ SOLVER:
   WEIGHT_DECAY_BIAS: 0.0
 TEST:
   IMS_PER_BATCH: 256
-  LOAD_EPOCH: 160
-2020-09-01 08:00:34,465 Reid_Baseline INFO: Start testing
-2020-09-01 09:40:25,786 Reid_Baseline INFO: Validation Results: MSMT17_V2
-2020-09-01 09:40:25,786 Reid_Baseline INFO: mAP: 16.4%
-2020-09-01 09:40:25,787 Reid_Baseline INFO: CMC curve, Rank-1  :37.9%
-2020-09-01 09:40:25,787 Reid_Baseline INFO: CMC curve, Rank-5  :51.5%
-2020-09-01 09:40:25,787 Reid_Baseline INFO: CMC curve, Rank-10 :57.8%
-2020-09-01 09:40:25,787 Reid_Baseline INFO: Training complete in 99m 51s
-2020-09-01 09:40:25,787 Reid_Baseline INFO: ----------
+  LOAD_EPOCH: 100
+2020-09-09 00:04:10,192 Reid_Baseline INFO: Start testing
+2020-09-09 01:41:08,406 Reid_Baseline INFO: Validation Results: MSMT17_V2
+2020-09-09 01:41:08,418 Reid_Baseline INFO: mAP: 15.6%
+2020-09-09 01:41:08,419 Reid_Baseline INFO: CMC curve, Rank-1  :39.0%
+2020-09-09 01:41:08,419 Reid_Baseline INFO: CMC curve, Rank-5  :50.5%
+2020-09-09 01:41:08,419 Reid_Baseline INFO: CMC curve, Rank-10 :55.8%
+2020-09-09 01:41:08,419 Reid_Baseline INFO: Training complete in 96m 58s
+2020-09-09 01:41:08,419 Reid_Baseline INFO: ----------

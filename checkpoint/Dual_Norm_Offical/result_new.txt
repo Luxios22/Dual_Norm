@@ -1,6 +1,6 @@
-2020-09-01 08:00:15,483 Reid_Baseline INFO: Using 1 GPUS
-2020-09-01 08:00:15,484 Reid_Baseline INFO: Loaded configuration file config/dual_norm.yaml
-2020-09-01 08:00:15,484 Reid_Baseline INFO: Running with config:
+2020-09-01 11:14:31,487 Reid_Baseline INFO: Using 1 GPUS
+2020-09-01 11:14:31,487 Reid_Baseline INFO: Loaded configuration file config/dual_norm_official.yaml
+2020-09-01 11:14:31,488 Reid_Baseline INFO: Running with config:
 DATALOADER:
   NUM_INSTANCE: 32
   NUM_WORKERS: 4
@@ -30,7 +30,7 @@ MODEL:
   LAST_STRIDE: 1
   NAME: resnet50_ifn
   POOL: AVG
-OUTPUT_DIR: ./checkpoint/Dual_Norm
+OUTPUT_DIR: ./checkpoint/Dual_Norm_Offical
 RE_RANKING: False
 SOLVER:
   BASE_LR: 0.0003
@@ -58,11 +58,11 @@ SOLVER:
 TEST:
   IMS_PER_BATCH: 256
   LOAD_EPOCH: 160
-2020-09-01 08:00:34,465 Reid_Baseline INFO: Start testing
-2020-09-01 09:40:25,786 Reid_Baseline INFO: Validation Results: MSMT17_V2
-2020-09-01 09:40:25,786 Reid_Baseline INFO: mAP: 16.4%
-2020-09-01 09:40:25,787 Reid_Baseline INFO: CMC curve, Rank-1  :37.9%
-2020-09-01 09:40:25,787 Reid_Baseline INFO: CMC curve, Rank-5  :51.5%
-2020-09-01 09:40:25,787 Reid_Baseline INFO: CMC curve, Rank-10 :57.8%
-2020-09-01 09:40:25,787 Reid_Baseline INFO: Training complete in 99m 51s
-2020-09-01 09:40:25,787 Reid_Baseline INFO: ----------
+2020-09-01 11:14:52,342 Reid_Baseline INFO: Start testing
+2020-09-01 12:44:35,215 Reid_Baseline INFO: Validation Results: MSMT17_V2
+2020-09-01 12:44:35,221 Reid_Baseline INFO: mAP: 18.2%
+2020-09-01 12:44:35,221 Reid_Baseline INFO: CMC curve, Rank-1  :41.9%
+2020-09-01 12:44:35,222 Reid_Baseline INFO: CMC curve, Rank-5  :54.5%
+2020-09-01 12:44:35,222 Reid_Baseline INFO: CMC curve, Rank-10 :60.4%
+2020-09-01 12:44:35,222 Reid_Baseline INFO: Training complete in 89m 43s
+2020-09-01 12:44:35,222 Reid_Baseline INFO: ----------
