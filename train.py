@@ -3,6 +3,7 @@ import os
 import time
 import torch
 import numpy as np
+from torchvision.transforms.transforms import ColorJitter
 import models
 from config import cfg
 from logger import make_logger
@@ -28,14 +29,26 @@ else:
 
 def data_loader(cfg,dataset_names,merge):
 
-    transform_train_list = [
-        transforms.Resize(cfg.INPUT.SIZE_TRAIN, interpolation=3),
-        transforms.Pad(10),
-        transforms.RandomCrop(cfg.INPUT.SIZE_TRAIN),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-    ]
+    if cfg.INPUT.BRIGHTNESS == [1.0,1.0]:
+        transform_train_list = [
+            transforms.Resize(cfg.INPUT.SIZE_TRAIN, interpolation=3),
+            transforms.Pad(10),
+            transforms.RandomCrop(cfg.INPUT.SIZE_TRAIN),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ]
+    else:
+        print('Using Darken Images')
+        transform_train_list = [
+            transforms.Resize(cfg.INPUT.SIZE_TRAIN, interpolation=3),
+            transforms.Pad(10),
+            transforms.RandomCrop(cfg.INPUT.SIZE_TRAIN),
+            transforms.RandomHorizontalFlip(),
+            transforms.ColorJitter(brightness=cfg.INPUT.BRIGHTNESS),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        ]
 
     transform_val_list = [
         transforms.Resize(size=cfg.INPUT.SIZE_TRAIN,interpolation=3), #Image.BICUBIC

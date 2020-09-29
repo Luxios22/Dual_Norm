@@ -39,7 +39,7 @@ _C.INPUT.RE = True
 _C.INPUT.RE_PROB = 0.5
 
 # Value of colorjitter brightness
-_C.INPUT.BRIGHTNESS = 0.0
+_C.INPUT.BRIGHTNESS = [1.0,1.0]
 # Value of colorjitter contrast
 _C.INPUT.CONTRAST = 0.0
 # Value of colorjitter saturation
