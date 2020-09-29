@@ -15,6 +15,7 @@ from collections import OrderedDict
 from .ntu_outdoor_night_v1 import NTU_Outdoor_Night_V1
 from .ntu_outdoor_night_v2 import NTU_Outdoor_Night_V2
 from .ntu_outdoor_night_v1_enlighten import NTU_Outdoor_Night_V1_Enlighten
+from .ntu_outdoor_night_v2_enlighten import NTU_Outdoor_Night_V2_Enlighten
 
 
 __factory = {
@@ -30,7 +31,8 @@ __factory = {
     'CUHK-SYSU': CUHK_SYSU,
     'NTU_Outdoor_Night_V1': NTU_Outdoor_Night_V1,
     'NTU_Outdoor_Night_V2': NTU_Outdoor_Night_V2,
-    'NTU_Outdoor_Night_V1_Enlighten': NTU_Outdoor_Night_V1_Enlighten
+    'NTU_Outdoor_Night_V1_Enlighten': NTU_Outdoor_Night_V1_Enlighten,
+    'NTU_Outdoor_Night_V2_Enlighten': NTU_Outdoor_Night_V2_Enlighten,
 }
 
 def get_names():
