@@ -1,0 +1,365 @@
+,Name,ID,Category,Gender,Hash,Image,Hair,Torso,Legs,remarks,Grab/Foodpanda compatible,Texture done?
+406,East SA Female 2,a_f_m_eastsa_02,AmbientFemale,female,0x63C8D891,https://wiki.rage.mp/images/8/87/EastSA02AFM.png,"0:[0-2]
+1:[0-3]","0:[0-3]
+1:[0-3]",0:[0-6],,Yes,Yes
+560,Korean Female,a_f_m_ktown_01,AmbientFemale,female,0x52C824DE,https://wiki.rage.mp/images/3/3b/KTown01AFM.png,"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+394,South Central MC Female,a_f_m_soucentmc_01,AmbientFemale,female,0xCDE955D2,https://wiki.rage.mp/images/9/9d/SouCentMC01AFM.png,"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+470,Tramp Female,a_f_m_tramp_01,AmbientFemale,female,0x48F96F5B,https://wiki.rage.mp/images/7/73/Tramp01AFM.png,"0:[0-3]
+1:[0-2]
+2:[0-2]","0:[0-3]
+1:[0-3]
+2:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+461,Business Young Female 2,a_f_y_business_02,AmbientFemale,female,0x31430342,https://wiki.rage.mp/images/e/e4/Business02AFY.png,"0:[0-3]
+1:[0-3]
+2:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+572,East SA Young Female,a_f_y_eastsa_01,AmbientFemale,female,0xF5B0079D,https://wiki.rage.mp/images/5/54/EastSA01AFY.png,"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",0:[0-6],,Yes,Yes
+460,Indian Young Female,a_f_y_indian_01,AmbientFemale,female,0x092D9CC1,https://wiki.rage.mp/images/6/6d/Indian01AFY.png,"0:[0-1]
+1:[0-1]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+434,Vinewood Female 3,a_f_y_vinewood_03,AmbientFemale,female,0x379DDAB8,https://wiki.rage.mp/images/2/2a/Vinewood03AFY.png,"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+553,African American Male,a_m_m_afriamer_01,AmbientMale,male,0xD172497E,https://wiki.rage.mp/images/3/3e/AfriAmer01AMM.png,"0:[0-1]
+1:[0-1]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+452,Beverly Hills Male,a_m_m_bevhills_01,AmbientMale,male,0x54DBEE1F,https://wiki.rage.mp/images/6/69/BevHills01AMM.png,0:[0],"0:[0-3]
+1:[0-6]","0:[0-3]
+1:[0-2]",,Yes,Yes
+557,Beverly Hills Male 2,a_m_m_bevhills_02,AmbientMale,male,0x3FB5C3D3,https://wiki.rage.mp/images/c/cd/BevHills02AMM.png,0:[0],"0:[0-3]
+1:[0-3]",0:[0-3],,Yes,Yes
+537,Farmer,a_m_m_farmer_01,AmbientMale,male,0x94562DD7,https://wiki.rage.mp/images/e/eb/Farmer01AMM.png,"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",0:[0-3],,Yes,Yes
+561,Fat Latino Male,a_m_m_fatlatin_01,AmbientMale,male,0x61D201B3,https://wiki.rage.mp/images/a/a8/FatLatin01AMM.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+525,General Fat Male,a_m_m_genfat_01,AmbientMale,male,0x06DD569F,https://wiki.rage.mp/images/e/e1/GenFat01AMM.png,0:[0],"0:[0-4]
+1:[0-4]","0:[0-3]
+1:[0-3]",,Yes,Yes
+388,Golfer Male,a_m_m_golfer_01,AmbientMale,male,0xA9EB0E42,https://wiki.rage.mp/images/a/aa/Golfer01AMM.png,"0:[0-3]
+1:[0-1]","0:[0-6]
+1:[0-3]","0:[0-3]
+1:[0-6]",,Yes,Yes
+521,Indian Male,a_m_m_indian_01,AmbientMale,male,0xDDCAAA2C,https://wiki.rage.mp/images/d/db/Indian01AMM.png,"0:[0-1]
+1:[0-1]","0:[0-3]
+1:[0-3]",0:[0-3],,Yes,Yes
+435,Korean Male,a_m_m_ktown_01,AmbientMale,male,0xD15D7E71,https://wiki.rage.mp/images/2/20/KTown01AMM.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+379,Paparazzi Male,a_m_m_paparazzi_01,AmbientMale,male,0xECCA8C15,https://wiki.rage.mp/images/f/f9/Paparazzi01AMM.png,"0:[0-3]
+1:[0-3]
+2:[0-2]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+426,Polynesian,a_m_m_polynesian_01,AmbientMale,male,0xA9D9B69E,https://wiki.rage.mp/images/8/8e/Polynesian01AMM.png,"0:[0-3]
+1:[0-1]","0:[0-3]
+1:[0-3]",0:[0-3],,Yes,Yes
+514,Prologue Host Male,a_m_m_prolhost_01,AmbientMale,male,0x9712C38F,https://wiki.rage.mp/images/d/dd/PrologueHostage01AMM.png,0:[0],"0:[0-1]
+1:[0-1]",0:[0-1],,Yes,Yes
+413,Salton Male,a_m_m_salton_01,AmbientMale,male,0x4F2E038A,https://wiki.rage.mp/images/f/f3/Salton01AMM.png,"0:[0-3]
+1:[0-1]","0:[0-3]
+1:[0-3]
+2:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+545,Salton Male 2,a_m_m_salton_02,AmbientMale,male,0x60F4A717,https://wiki.rage.mp/images/a/a3/Salton02AMM.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+319,Salton Male 3,a_m_m_salton_03,AmbientMale,male,0xB28C4A45,https://wiki.rage.mp/images/4/48/Salton03AMM.png,0:[0-3],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+13,Salton Male 4,a_m_m_salton_04,AmbientMale,male,0x964511B7,https://wiki.rage.mp/images/8/8a/Salton04AMM.png,0:[0],"0:[0-4]
+1:[0-4]","0:[0-4]
+1:[0-3]",,Yes,Yes
+468,Skater Male,a_m_m_skater_01,AmbientMale,male,0xD9D7588C,https://wiki.rage.mp/images/4/46/Skater01AMM.png,"0:[0-3]
+1:[0-2]
+2:[0-1]","0:[0-3]
+1:[0-3]","0:[0-6]
+1:[0-3]",,Yes,Yes
+543,South Central Male,a_m_m_soucent_01,AmbientMale,male,0x6857C9B7,https://wiki.rage.mp/images/3/3a/SouCent01AMM.png,0:[0],"0:[0-4]
+1:[0-4]","0:[0-3]
+1:[0-2]",,Yes,Yes
+392,South Central Male 2,a_m_m_soucent_02,AmbientMale,male,0x9F6D37E1,https://wiki.rage.mp/images/d/d2/SouCent02AMM.png,0:[0],"0:[0-3]
+1:[0-3]
+2:[0-3]",0:[0-3],,Yes,Yes
+532,South Central Male 3,a_m_m_soucent_03,AmbientMale,male,0x8BD990BA,https://wiki.rage.mp/images/d/d6/SouCent03AMM.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-4]
+1:[0-4]",,Yes,Yes
+395,South Central Male 4,a_m_m_soucent_04,AmbientMale,male,0xC2FBFEFE,https://wiki.rage.mp/images/5/5d/SouCent04AMM.png,0:[0],"0:[0-2]
+1:[0-2]","0:[0-2]
+1:[0-2]",,Yes,Yes
+518,Latino Street Male 2,a_m_m_stlat_02,AmbientMale,male,0xC2A87702,https://wiki.rage.mp/images/a/a0/StLat02AMM.png,0:[0],"0:[0-4]
+1:[0-4]",0:[0-4],,Yes,Yes
+493,Tennis Player Male,a_m_m_tennis_01,AmbientMale,male,0x546A5344,https://wiki.rage.mp/images/0/08/Tennis01AMM.png,0:[0],"0:[0-6]
+1:[0-6]",0:[0-6],,Yes,Yes
+234,Tourist Male,a_m_m_tourist_01,AmbientMale,male,0xC89F0184,https://wiki.rage.mp/images/d/df/Tourist01AMM.png,"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+522,Beach Tramp Male,a_m_m_trampbeac_01,AmbientMale,male,0x53B57EB0,https://wiki.rage.mp/images/3/3d/TrampBeac01AMM.png,"0:[0-2]
+1:[0-2]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+464,General Street Old Male,a_m_o_genstreet_01,AmbientMale,male,0xAD54E7A8,https://wiki.rage.mp/images/b/bc/GenStreet01AMO.png,"0:[0-3]
+1:[0-1]","0:[0-4]
+1:[0-4]",0:[0-4],,Yes,Yes
+433,Korean Old Male,a_m_o_ktown_01,AmbientMale,male,0x1536D95A,https://wiki.rage.mp/images/3/38/KTown01AMO.png,"0:[0-3]
+1:[0-3]
+2:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+383,Salton Old Male,a_m_o_salton_01,AmbientMale,male,0x20208E4D,https://wiki.rage.mp/images/d/d5/Salton01AMO.png,0:[0],"0:[0-3]
+1:[0-3]
+2:[0-1]",0:[0-3],,Yes,Yes
+398,Vespucci Beach Male,a_m_y_beachvesp_01,AmbientMale,male,0x7E0961B8,https://wiki.rage.mp/images/5/57/BeachVesp01AMY.png,0:[0],"0:[0-4]
+1:[0-3]","0:[0-4]
+1:[0-4]",,Yes,Yes
+445,Vespucci Beach Male 2,a_m_y_beachvesp_02,AmbientMale,male,0xCA56FA52,https://wiki.rage.mp/images/2/25/Beachvesp02AMY.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+389,Beverly Hills Young Male,a_m_y_bevhills_01,AmbientMale,male,0x76284640,https://wiki.rage.mp/images/8/82/BevHills01AMY.png,"0:[0-3]
+1:[0-1]","0:[0-6]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+564,Business Casual,a_m_y_busicas_01,AmbientMale,male,0x9AD32FE9,https://wiki.rage.mp/images/a/a7/Busicas01AMY.png,"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",0:[0-3],,Yes,Yes
+472,Business Young Male 2,a_m_y_business_02,AmbientMale,male,0xB3B3F5E6,https://wiki.rage.mp/images/c/cc/Business02AMY.png,"0:[0-1]
+1:[0-1]
+2:[0-1]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+482,Downhill Cyclist,a_m_y_dhill_01,AmbientMale,male,0xFF3E88AB,https://wiki.rage.mp/images/b/b7/DHill01AMY.png,0:[0],0:[0-4],0:[0-3],,Yes,Yes
+548,Downtown Male,a_m_y_downtown_01,AmbientMale,male,0x2DADF4AA,https://wiki.rage.mp/images/2/27/DownTown01AMY.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+534,East SA Young Male,a_m_y_eastsa_01,AmbientMale,male,0xA4471173,https://wiki.rage.mp/images/a/a7/Eastsa01AMY.png,"0:[0-3]
+1:[0-2]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+509,East SA Young Male 2,a_m_y_eastsa_02,AmbientMale,male,0x168775F6,https://wiki.rage.mp/images/b/bd/EastSA02AMY.png,"0:[0-3]
+1:[0-3]
+2:[0-1]",0:[0-6],"0:[0-3]
+1:[0-3]",,Yes,Yes
+421,Epsilon Male 2,a_m_y_epsilon_02,AmbientMale,male,0xAA82FF9B,https://wiki.rage.mp/images/6/68/Epsilon02AMY.png,"0:[0-3]
+1:[0-3]","0:[0-2]
+1:[0-2]",0:[0-2],,Yes,Yes
+419,Gay Male 2,a_m_y_gay_02,AmbientMale,male,0xA5720781,https://wiki.rage.mp/images/f/fa/Gay02AMY.png,"0:[0-2]
+1:[0-2]
+2:[0-1]","0:[0-3]
+1:[0-4]","0:[0-4]
+1:[0-3]",,Yes,Yes
+513,General Street Young Male,a_m_y_genstreet_01,AmbientMale,male,0x9877EF71,https://wiki.rage.mp/images/8/82/GenStreet01AMY.png,0:[0],"0:[0-4]
+1:[0-4]",0:[0-3],,Yes,Yes
+544,General Street Young Male 2,a_m_y_genstreet_02,AmbientMale,male,0x3521A8D2,https://wiki.rage.mp/images/7/7a/GenStreet02AMY.png,0:[0],"0:[0-4]
+1:[0-4]",0:[0-3],,Yes,Yes
+449,Golfer Young Male,a_m_y_golfer_01,AmbientMale,male,0xD71FE131,https://wiki.rage.mp/images/f/f7/Golfer01AMY.png,"0:[0-2]
+1:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+428,Hipster Male,a_m_y_hipster_01,AmbientMale,male,0x2307A353,https://wiki.rage.mp/images/e/e5/Hipster01AMY.png,"0:[0-2]
+1:[0-1]
+2:[0-1]","0:[0-6]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+559,Hipster Male 2,a_m_y_hipster_02,AmbientMale,male,0x14D506EE,https://wiki.rage.mp/images/4/46/Hipster02AMY.png,"0:[0-1]
+1:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+451,Hipster Male 3,a_m_y_hipster_03,AmbientMale,male,0x4E4179C6,https://wiki.rage.mp/images/c/c2/Hipster03AMY.png,"0:[0-3]
+1:[0-1]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+471,Juggalo Male,a_m_y_juggalo_01,AmbientMale,male,0x91CA3E2C,https://wiki.rage.mp/images/2/2c/Juggalo01AMY.png,0:[0],"0:[0-2]
+1:[0-2]",0:[0-3],,Yes,Yes
+499,Latino Young Male,a_m_y_latino_01,AmbientMale,male,0x132C1A8E,https://wiki.rage.mp/images/e/ee/Latino01AMY.png,0:[0],"0:[0-4]
+1:[0-4]","0:[0-3]
+1:[0-3]",,Yes,Yes
+565,Mexican Thug,a_m_y_mexthug_01,AmbientMale,male,0x3053E555,https://wiki.rage.mp/images/d/da/Mexthug01AMY.png,0:[0],"0:[0-4]
+1:[0-3]","0:[0-4]
+1:[0-3]",,Yes,Yes
+473,Road Cyclist,a_m_y_roadcyc_01,AmbientMale,male,0xF561A4C6,https://wiki.rage.mp/images/6/66/RoadCyc01AMY.png,0:[0-3],"0:[0-3]
+1:[0-2]","0:[0-6]
+1:[0-2]",,Yes,Yes
+427,Jogger Male 2,a_m_y_runner_02,AmbientMale,male,0x843D9D0F,https://wiki.rage.mp/images/4/41/Runner02AMY.png,"0:[0-2]
+1:[0-1]
+2:[0-1]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+533,Skater Young Male,a_m_y_skater_01,AmbientMale,male,0xC1C46677,https://wiki.rage.mp/images/2/23/Skater01AMY.png,"0:[0-3]
+1:[0-3]
+2:[0-1]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+469,Skater Young Male 2,a_m_y_skater_02,AmbientMale,male,0xAFFAC2E4,https://wiki.rage.mp/images/8/86/Skater02AMY.png,0:[0],"0:[0-4]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+538,South Central Young Male 3,a_m_y_soucent_03,AmbientMale,male,0xC3F0F764,https://wiki.rage.mp/images/7/7e/SouCent03AMY.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+393,South Central Young Male 4,a_m_y_soucent_04,AmbientMale,male,0x8A3703F1,https://wiki.rage.mp/images/3/3a/SouCent04AMY.png,0:[0],"0:[0-4]
+1:[0-3]","0:[0-3]
+1:[0-4]",,Yes,Yes
+550,Black Street Male,a_m_y_stbla_01,AmbientMale,male,0xCF92ADE9,https://wiki.rage.mp/images/1/15/StBla01AMY.png,"0:[0-3]
+1:[0-1]",0:[0-6],0:[0-6],,Yes,Yes
+381,Black Street Male 2,a_m_y_stbla_02,AmbientMale,male,0x98C7404F,https://wiki.rage.mp/images/6/60/Stbla02AMY.png,"0:[0-3]
+1:[0-3]","0:[0-6]
+1:[0-6]",0:[0-4],,Yes,Yes
+442,White Street Male,a_m_y_stwhi_01,AmbientMale,male,0x2418C430,https://wiki.rage.mp/images/9/9d/StWhi01AMY.png,"0:[0-3]
+1:[0-3]
+2:[0-1]",0:[0-6],0:[0-6],,Yes,Yes
+467,White Street Male 2,a_m_y_stwhi_02,AmbientMale,male,0x36C6E98C,https://wiki.rage.mp/images/3/38/StWhi02AMY.png,"0:[0-3]
+1:[0-3]
+2:[0-3]","0:[0-6]
+1:[0-6]",0:[0-6],,Yes,Yes
+480,Sunbather Male,a_m_y_sunbathe_01,AmbientMale,male,0xB7292F0C,https://wiki.rage.mp/images/3/34/SunBathe01AMY.png,0:[0],"0:[0-6]
+1:[0-3]",0:[0-6],,Yes,Yes
+414,Vinewood Douche,a_m_y_vindouche_01,AmbientMale,male,0xC19377E7,https://wiki.rage.mp/images/c/c2/VinDouche01AMY.png,"0:[0-2]
+1:[0-3]
+2:[0-2]
+3:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+571,Vinewood Male,a_m_y_vinewood_01,AmbientMale,male,0x4B64199D,https://wiki.rage.mp/images/d/d7/VineWood01AMY.png,0:[0],"0:[0-3]
+1:[0-3]
+2:[0-3]",0:[0-3],,Yes,Yes
+386,Vinewood Male 3,a_m_y_vinewood_03,AmbientMale,male,0x1FDF4294,https://wiki.rage.mp/images/8/8f/Vinewood03AMY.png,"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+443,Families Female,g_f_y_families_01,GangFemale,female,0x4E0CE5D3,https://wiki.rage.mp/images/3/3d/Families01GFY.png,"0:[0-3]
+1:[0-3]
+2:[0-1]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-2]",,Yes,Yes
+409,Armenian Goon,g_m_m_armgoon_01,GangMale,male,0xFDA94268,https://wiki.rage.mp/images/2/21/ArmGoon01GMM.png,0:[0-2],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+500,Armenian Lieutenant,g_m_m_armlieut_01,GangMale,male,0xE7714013,https://wiki.rage.mp/images/f/fb/ArmLiuet01GMM.png,0:[0-3],"0:[0-3]
+1:[0-3]
+2:[0-3]",0:[0-3],,Yes,Yes
+382,Chemical Plant Worker,g_m_m_chemwork_01,GangMale,male,0xF6157D8F,https://wiki.rage.mp/images/2/26/ChemWork01GMM.png,0:[0],0:[0-1],0:[0-1],,Yes,Yes
+569,Korean Boss,g_m_m_korboss_01,GangMale,male,0x352A026F,https://wiki.rage.mp/images/6/65/KorBoss01GMM.png,"0:[0-2]
+1:[0-2]","0:[0-3]
+1:[0-3]",0:[0-6],,Yes,Yes
+510,Mexican Boss,g_m_m_mexboss_01,GangMale,male,0x5761F4AD,https://wiki.rage.mp/images/1/1c/MexBoss01GMM.png,"0:[0-3]
+1:[0-3]
+2:[0-1]","0:[0-3]
+1:[0-3]
+2:[0-3]",0:[0-3],,Yes,Yes
+385,Ballas East Male,g_m_y_ballaeast_01,GangMale,male,0xF42EE883,https://wiki.rage.mp/images/e/e3/BallaEast01GMY.png,0:[0],"0:[0-3]
+1:[0-3]
+2:[0-2]","0:[0-2]
+1:[0-2]",,Yes,Yes
+567,Families DNF Male,g_m_y_famdnf_01,GangMale,male,0xDB729238,https://wiki.rage.mp/images/d/d8/FamDNF01GMY.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+539,Mexican Gang Member,g_m_y_mexgang_01,GangMale,male,0xBDDD5546,https://wiki.rage.mp/images/a/a2/MexGang01GMY.png,"0:[0-1]
+1:[0-1]","0:[0-3]
+1:[0-2]",0:[0-2],,Yes,Yes
+474,Mexican Goon,g_m_y_mexgoon_01,GangMale,male,0x26EF3426,https://wiki.rage.mp/images/2/23/MexGoon01GMY.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]
+2:[0-3]",,Yes,Yes
+519,Polynesian Goon,g_m_y_pologoon_01,GangMale,male,0x4F3FBA06,https://wiki.rage.mp/images/9/9e/PoloGoon01GMY.png,"0:[0-1]
+1:[0-1]","0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-3]",,Yes,Yes
+459,Salvadoran Goon 2,g_m_y_salvagoon_02,GangMale,male,0x3273A285,https://wiki.rage.mp/images/c/c9/SalvaGoon02GMY.png,0:[0],"0:[0-3]
+1:[0-3]","0:[0-3]
+1:[0-2]",,Yes,Yes
+462,Salvadoran Goon 3,g_m_y_salvagoon_03,GangMale,male,0x03B8C510,https://wiki.rage.mp/images/2/2c/SalvaGoon03GMY.png,"0:[0-1]
+1:[0-1]
+2:[0-1]","0:[0-3]
+1:[0-2]","0:[0-3]
+1:[0-3]",,Yes,Yes
+520,Street Punk,g_m_y_strpunk_01,GangMale,male,0xFD1C49BB,https://wiki.rage.mp/images/d/da/StrPunk01GMY.png,"0:[0-4]
+1:[0-1]","0:[0-4]
+1:[0-4]","0:[0-3]
+1:[0-3]",,Yes,Yes
+416,Jewel Heist Driver,hc_driver,Others,male,0x3B474ADF,https://wiki.rage.mp/images/8/8b/PestContDriver.png,"0:[0-1]
+1:[0-1]
+2:[0-1]","0:[0]
+1:[0]
+2:[0-2]
+3:[0-5]
+4:[0-2]
+5:[0-2]","0:[0]
+1:[0]
+2:[0-2]
+3:[0-2]
+4:[0]",worker,Yes,Yes
+477,Jewel Heist Gunman,hc_gunman,Others,male,0x0B881AEE,https://wiki.rage.mp/images/1/1b/PestContGunman.png,"0:[0-1]
+1:[0-1]
+2:[0-1]","0:[0-1]
+1:[0]
+2:[0]
+3:[0]
+4:[0-4]
+5:[0-2]
+6:[0-2]
+7:[0]
+8:[0]","0:[0-1]
+1:[0]
+2:[0]
+3:[0]
+4:[0]
+5:[0-2]
+6:[0-2]
+7:[0]
+8:[0]",,Yes,Yes
+484,Jewel Heist Hacker,hc_hacker,Others,male,0x99BB00F8,https://wiki.rage.mp/images/e/e2/Hacker.png,"0:[0]
+1:[0]
+2:[0]
+3:[0]","0:[0]
+1:[0]
+2:[0]
+3:[0]","0:[0]
+1:[0]
+2:[0]
+3:[0]",,Yes,Yes
+430,Abigail Mathers,ig_abigail,Story,female,0x400AEC41,https://wiki.rage.mp/images/8/88/Abigail.png,0:[0],0:[0-1],0:[0-1],,Yes,Yes
+503,Agent,ig_agent,Story,male,0x246AF208,https://wiki.rage.mp/images/a/a2/Ig_agent.png,0:[0],"0:[0-1]
+1:[0-1]
+2:[0-1]","0:[0-2]
+1:[0-1]",,Yes,Yes
+563,Andreas Sanchez,ig_andreas,Story,male,0x47E4EEA0,https://wiki.rage.mp/images/5/53/Andreas.png,0:[0],"0:[0]
+1:[0]
+2:[0]","0:[0]
+1:[0]",,Yes,Yes
+402,Benny,ig_benny,Story,male,0xC4B715D2,https://wiki.rage.mp/images/2/22/Benny.png,0:[0],0:[0-1],0:[0-1],,Yes,Yes
+529,Car 3 Guy 1,ig_car3guy1,Story,male,0x84F9E937,https://wiki.rage.mp/images/b/b9/Car3Guy1.png,0:[0],0:[0-1],0:[0-1],,Yes,Yes
+541,Car 3 Guy 2,ig_car3guy2,Story,male,0x75C34ACA,https://wiki.rage.mp/images/e/ef/Car3Guy2.png,0:[0],0:[0-1],0:[0-1],,Yes,Yes
+549,Cris Formage,ig_chrisformage,Story,male,0x286E54A7,https://wiki.rage.mp/images/c/c8/CrisFormage.png,0:[0],0:[0-1],0:[0-1],,Yes,Yes
+523,Clay Jackson (The Pain Giver),ig_claypain,Story,male,0x9D0087A8,https://wiki.rage.mp/images/3/3e/ClayPain.png,0:[0],0:[0-1],0:[0-1],,Yes,Yes
+546,Devin,ig_devin,Story,male,0x7461A0B0,https://wiki.rage.mp/images/9/99/Devin.png,0:[0-1],"0:[0-2]
+1:[0]
+2:[0-1]
+3:[0]
+4:[0]
+5:[0]
+6:[0]
+7:[0-2]","0:[0-2]
+1:[0]
+2:[0-1]
+4:[0]",,Yes,Yes
+374,Dom Beasley,ig_dom,Story,male,0x9C2DB088,https://wiki.rage.mp/images/8/8e/Dom.png,0:[0-1],"0:[0]
+1:[0]","0:[0]
+1:[0]",,Yes,Yes
+490,Dr. Friedlander,ig_drfriedlander,Story,male,0xCBFC0DF5,https://wiki.rage.mp/images/2/21/DrFriedlander.png,0:[0-1],"0:[0-1]
+1:[0-1]",0:[0-1],,Yes,Yes
+450,Gerald,ig_g,Story,male,0x841BA933,https://wiki.rage.mp/images/f/f7/G.png,0:[0],0:[0-1],0:[0-1],,Yes,Yes
+488,Hunter,ig_hunter,Story,male,0xCE1324DE,https://wiki.rage.mp/images/4/4b/Hunter.png,0:[0-1],0:[0-1],0:[0-1],,Yes,Yes

@@ -9,13 +9,21 @@ from .random_grid import Random_GRID
 from .random_prid import Random_PRID
 from .random_ilids import Random_iLIDS
 from .cuhk02 import CUHK02
-from .cuhk_sysu import CUHK_SYSU
+# from .cuhk_sysu import CUHK_SYSU
 from .combined import Combined
 from collections import OrderedDict
 from .ntu_outdoor_night_v1 import NTU_Outdoor_Night_V1
 from .ntu_outdoor_night_v2 import NTU_Outdoor_Night_V2
 from .ntu_outdoor_night_v1_enlighten import NTU_Outdoor_Night_V1_Enlighten
 from .ntu_outdoor_night_v2_enlighten import NTU_Outdoor_Night_V2_Enlighten
+from .ntu_outdoor_v2_black import NTUOutdoorv2_black
+from .ntu_outdoor_v2_white import NTUOutdoorv2_white
+from .gta_nonuniform import GTA_NonUniform
+from .gta_nonuniform_unique import GTA_NonUniform_Unique
+from .gta_uniform import GTA_Uniform
+from .blackreid  import BlackReID
+from .whitereid import WhiteReID
+
 
 
 __factory = {
@@ -28,11 +36,18 @@ __factory = {
     'PRID2011': Random_PRID,
     'i-LIDS': Random_iLIDS,
     'CUHK02': CUHK02,
-    'CUHK-SYSU': CUHK_SYSU,
+    # 'CUHK-SYSU': CUHK_SYSU,
     'NTU_Outdoor_Night_V1': NTU_Outdoor_Night_V1,
     'NTU_Outdoor_Night_V2': NTU_Outdoor_Night_V2,
     'NTU_Outdoor_Night_V1_Enlighten': NTU_Outdoor_Night_V1_Enlighten,
     'NTU_Outdoor_Night_V2_Enlighten': NTU_Outdoor_Night_V2_Enlighten,
+    'NTUOutdoorv2_black': NTUOutdoorv2_black,
+    'NTUOutdoorv2_white': NTUOutdoorv2_white,
+    'gta_uniform':GTA_Uniform,
+    'gta_nonuniform_unique':GTA_NonUniform_Unique,
+    'gta_nonuniform':GTA_NonUniform,
+    'blackreid':BlackReID,
+    'whitereid':WhiteReID
 }
 
 def get_names():

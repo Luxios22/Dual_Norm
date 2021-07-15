@@ -1,38 +1,41 @@
-MODEL:
-  NAME: 'resnet50_ifn'
-  LAST_STRIDE: 2
-
-INPUT:
-  SIZE_TRAIN: [256, 128]
-  SIZE_TEST: [256, 128]
-  HF_PROB: 0.5 # random horizontal flip
-  PADDING: 10
-
-  RE: False # enable random erasing
-  RE_PROB: 0.5 # random erasing probability
-
-DATASETS:
-  SOURCE: ['Market-1501', 'DukeMTMC-reID', 'CUHK03', 'CUHK02', 'CUHK-SYSU']
-  TARGET: ['NTU_Outdoor_Night_V2']
-  # STORE_DIR: './datasets'
-  STORE_DIR: '/Users/linshan/Pictures/Person_ReID_Datasets'
-  # STORE_DIR: '../dsta/Datasets'
-
 DATALOADER:
+  NUM_INSTANCE: 32
   NUM_WORKERS: 8
-
+DATASETS:
+  MERGE: True
+  SOURCE: ['Market-1501']
+  STORE_DIR: /home/GTA
+  # TARGET: ['NTUOutdoorv2_black', 'NTUOutdoorv2_white']
+  TARGET: ['Market-1501']
+DEVICE: 'cuda:6'
+INPUT:
+  BRIGHTNESS: [1.0, 1.0]
+  CONTRAST: 0.0
+  HF_PROB: 0.5
+  HUE: 0.0
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+  RE: False
+  RE_PROB: 0.5
+  SATURATION: 0.0
+  SIZE_TEST: [384, 128]
+  SIZE_TRAIN: [384, 128]
+MODEL:
+  CLASS_PARAM: 1.0
+  D_PARAM: 1.0
+  G_PARAM: 1.0
+  LAST_STRIDE: 2
+  NAME: 'resnet50_ifn'
+  POOL: 'AVG'
+OUTPUT_DIR: ./checkpoint/Market-1501/dual_norm_384x128
+RE_RANKING: False
 SOLVER:
   LOSS: 'softmax'
   MAX_EPOCHS: 160
   IMS_PER_BATCH: 64
-
-  CHECKPOINT_PERIOD: 20
-  EVAL_PERIOD: 1
-
+  CHECKPOINT_PERIOD: 10
+  EVAL_PERIOD: 10
 TEST:
   IMS_PER_BATCH: 1
   LOAD_EPOCH: 160
-
-OUTPUT_DIR: "./checkpoint/Dual_Norm"
-DEVICE: "cpu"
-# DEVICE: "cuda:0"

@@ -1,0 +1,391 @@
+2021-05-13 03:59:14,362 Reid_Generalization INFO: Using 1 GPUS
+2021-05-13 03:59:14,363 Reid_Generalization INFO: Loaded configuration file config/dual_norm.yaml
+2021-05-13 03:59:14,364 Reid_Generalization INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 32
+  NUM_WORKERS: 8
+DATASETS:
+  MERGE: True
+  SOURCE: ['Market-1501']
+  STORE_DIR: /home/GTA
+  TARGET: ['NTUOutdoorv2_black', 'NTUOutdoorv2_white']
+DEVICE: cuda:6
+INPUT:
+  BRIGHTNESS: [1.0, 1.0]
+  CONTRAST: 0.0
+  HF_PROB: 0.5
+  HUE: 0.0
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+  RE: False
+  RE_PROB: 0.5
+  SATURATION: 0.0
+  SIZE_TEST: [128, 43]
+  SIZE_TRAIN: [128, 43]
+MODEL:
+  CLASS_PARAM: 1.0
+  D_PARAM: 1.0
+  G_PARAM: 1.0
+  LAST_STRIDE: 2
+  NAME: resnet50_ifn
+  POOL: AVG
+OUTPUT_DIR: ./checkpoint/Market-NTUV2-BW/dual_norm_128x43
+RE_RANKING: False
+SOLVER:
+  BASE_LR: 0.1
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 100
+  ETA_MIN_LR: 3e-07
+  EVAL_PERIOD: 10
+  GAMMA: 0.1
+  IMS_PER_BATCH: 64
+  LAMBDA1: 1.0
+  LAMBDA2: 1.0
+  LOSS: softmax
+  MARGIN: 0.3
+  MAX_EPOCHS: 160
+  MOMENTUM: 0.9
+  NESTEROV: True
+  OPTIMIZER_NAME: SGD
+  SCHED: StepLR
+  STEP: 40
+  TRI:
+    HARD_MINING: True
+    MARGIN: 0.3
+    NORM_FEAT: False
+    SCALE: 1.0
+    USE_COSINE_DIST: False
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WARMUP_STEPS: [30, 55]
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  IMS_PER_BATCH: 1
+  LOAD_EPOCH: 160
+2021-05-13 03:59:18,013 Reid_Generalization INFO: Start training
+2021-05-13 04:01:33,031 Reid_Generalization INFO: Epoch[1] Iteration[203/203] Loss: 5.614, Acc: 0.094, Base Lr: 5.00e-03
+2021-05-13 04:02:28,651 Reid_Generalization INFO: Epoch[2] Iteration[203/203] Loss: 3.175, Acc: 0.463, Base Lr: 5.00e-03
+2021-05-13 04:03:27,318 Reid_Generalization INFO: Epoch[3] Iteration[203/203] Loss: 2.202, Acc: 0.705, Base Lr: 5.00e-03
+2021-05-13 04:04:23,289 Reid_Generalization INFO: Epoch[4] Iteration[203/203] Loss: 1.793, Acc: 0.819, Base Lr: 5.00e-03
+2021-05-13 04:05:20,037 Reid_Generalization INFO: Epoch[5] Iteration[203/203] Loss: 1.579, Acc: 0.890, Base Lr: 5.00e-03
+2021-05-13 04:06:17,653 Reid_Generalization INFO: Epoch[6] Iteration[203/203] Loss: 1.430, Acc: 0.929, Base Lr: 5.00e-03
+2021-05-13 04:07:11,999 Reid_Generalization INFO: Epoch[7] Iteration[203/203] Loss: 1.356, Acc: 0.950, Base Lr: 5.00e-03
+2021-05-13 04:07:59,357 Reid_Generalization INFO: Epoch[8] Iteration[203/203] Loss: 1.286, Acc: 0.968, Base Lr: 5.00e-03
+2021-05-13 04:08:45,777 Reid_Generalization INFO: Epoch[9] Iteration[203/203] Loss: 1.241, Acc: 0.977, Base Lr: 5.00e-03
+2021-05-13 04:09:40,284 Reid_Generalization INFO: Epoch[10] Iteration[203/203] Loss: 1.212, Acc: 0.983, Base Lr: 5.00e-03
+2021-05-13 04:17:47,744 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 10
+2021-05-13 04:17:47,746 Reid_Generalization INFO: mAP: 8.1%
+2021-05-13 04:17:47,746 Reid_Generalization INFO: CMC curve, Rank-1  :26.5%
+2021-05-13 04:17:47,747 Reid_Generalization INFO: CMC curve, Rank-5  :47.0%
+2021-05-13 04:17:47,748 Reid_Generalization INFO: CMC curve, Rank-10 :58.6%
+2021-05-13 04:22:35,396 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 10
+2021-05-13 04:22:35,398 Reid_Generalization INFO: mAP: 14.2%
+2021-05-13 04:22:35,398 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2021-05-13 04:22:35,398 Reid_Generalization INFO: CMC curve, Rank-5  :55.3%
+2021-05-13 04:22:35,398 Reid_Generalization INFO: CMC curve, Rank-10 :61.2%
+2021-05-13 04:23:34,636 Reid_Generalization INFO: Epoch[11] Iteration[203/203] Loss: 1.191, Acc: 0.988, Base Lr: 5.00e-03
+2021-05-13 04:24:33,116 Reid_Generalization INFO: Epoch[12] Iteration[203/203] Loss: 1.170, Acc: 0.991, Base Lr: 5.00e-03
+2021-05-13 04:25:28,493 Reid_Generalization INFO: Epoch[13] Iteration[203/203] Loss: 1.159, Acc: 0.991, Base Lr: 5.00e-03
+2021-05-13 04:26:32,612 Reid_Generalization INFO: Epoch[14] Iteration[203/203] Loss: 1.149, Acc: 0.993, Base Lr: 5.00e-03
+2021-05-13 04:27:37,758 Reid_Generalization INFO: Epoch[15] Iteration[203/203] Loss: 1.139, Acc: 0.992, Base Lr: 5.00e-03
+2021-05-13 04:28:41,203 Reid_Generalization INFO: Epoch[16] Iteration[203/203] Loss: 1.125, Acc: 0.995, Base Lr: 5.00e-03
+2021-05-13 04:29:45,181 Reid_Generalization INFO: Epoch[17] Iteration[203/203] Loss: 1.122, Acc: 0.995, Base Lr: 5.00e-03
+2021-05-13 04:30:37,690 Reid_Generalization INFO: Epoch[18] Iteration[203/203] Loss: 1.122, Acc: 0.996, Base Lr: 5.00e-03
+2021-05-13 04:31:30,196 Reid_Generalization INFO: Epoch[19] Iteration[203/203] Loss: 1.106, Acc: 0.998, Base Lr: 5.00e-03
+2021-05-13 04:32:27,549 Reid_Generalization INFO: Epoch[20] Iteration[203/203] Loss: 1.101, Acc: 0.997, Base Lr: 5.00e-03
+2021-05-13 04:41:21,029 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 20
+2021-05-13 04:41:21,030 Reid_Generalization INFO: mAP: 8.4%
+2021-05-13 04:41:21,030 Reid_Generalization INFO: CMC curve, Rank-1  :29.3%
+2021-05-13 04:41:21,030 Reid_Generalization INFO: CMC curve, Rank-5  :46.5%
+2021-05-13 04:41:21,031 Reid_Generalization INFO: CMC curve, Rank-10 :58.0%
+2021-05-13 04:47:22,776 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 20
+2021-05-13 04:47:22,777 Reid_Generalization INFO: mAP: 14.2%
+2021-05-13 04:47:22,778 Reid_Generalization INFO: CMC curve, Rank-1  :38.8%
+2021-05-13 04:47:22,778 Reid_Generalization INFO: CMC curve, Rank-5  :57.2%
+2021-05-13 04:47:22,778 Reid_Generalization INFO: CMC curve, Rank-10 :61.8%
+2021-05-13 04:48:11,415 Reid_Generalization INFO: Epoch[21] Iteration[203/203] Loss: 1.100, Acc: 0.997, Base Lr: 5.00e-03
+2021-05-13 04:49:07,402 Reid_Generalization INFO: Epoch[22] Iteration[203/203] Loss: 1.093, Acc: 0.998, Base Lr: 5.00e-03
+2021-05-13 04:50:02,210 Reid_Generalization INFO: Epoch[23] Iteration[203/203] Loss: 1.086, Acc: 0.998, Base Lr: 5.00e-03
+2021-05-13 04:50:56,486 Reid_Generalization INFO: Epoch[24] Iteration[203/203] Loss: 1.082, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 04:51:50,331 Reid_Generalization INFO: Epoch[25] Iteration[203/203] Loss: 1.079, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 04:52:39,104 Reid_Generalization INFO: Epoch[26] Iteration[203/203] Loss: 1.080, Acc: 0.998, Base Lr: 5.00e-03
+2021-05-13 04:53:19,174 Reid_Generalization INFO: Epoch[27] Iteration[203/203] Loss: 1.075, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 04:54:19,826 Reid_Generalization INFO: Epoch[28] Iteration[203/203] Loss: 1.070, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 04:55:21,939 Reid_Generalization INFO: Epoch[29] Iteration[203/203] Loss: 1.068, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 04:56:23,174 Reid_Generalization INFO: Epoch[30] Iteration[203/203] Loss: 1.068, Acc: 0.998, Base Lr: 5.00e-03
+2021-05-13 05:06:19,717 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 30
+2021-05-13 05:06:19,725 Reid_Generalization INFO: mAP: 8.4%
+2021-05-13 05:06:19,726 Reid_Generalization INFO: CMC curve, Rank-1  :30.7%
+2021-05-13 05:06:19,726 Reid_Generalization INFO: CMC curve, Rank-5  :49.3%
+2021-05-13 05:06:19,726 Reid_Generalization INFO: CMC curve, Rank-10 :58.3%
+2021-05-13 05:12:53,865 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 30
+2021-05-13 05:12:53,865 Reid_Generalization INFO: mAP: 14.1%
+2021-05-13 05:12:53,866 Reid_Generalization INFO: CMC curve, Rank-1  :38.2%
+2021-05-13 05:12:53,866 Reid_Generalization INFO: CMC curve, Rank-5  :56.6%
+2021-05-13 05:12:53,866 Reid_Generalization INFO: CMC curve, Rank-10 :62.5%
+2021-05-13 05:13:39,638 Reid_Generalization INFO: Epoch[31] Iteration[203/203] Loss: 1.073, Acc: 0.997, Base Lr: 5.00e-03
+2021-05-13 05:14:29,413 Reid_Generalization INFO: Epoch[32] Iteration[203/203] Loss: 1.070, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 05:15:23,507 Reid_Generalization INFO: Epoch[33] Iteration[203/203] Loss: 1.062, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 05:16:19,379 Reid_Generalization INFO: Epoch[34] Iteration[203/203] Loss: 1.059, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 05:17:18,166 Reid_Generalization INFO: Epoch[35] Iteration[203/203] Loss: 1.061, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 05:18:11,148 Reid_Generalization INFO: Epoch[36] Iteration[203/203] Loss: 1.065, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 05:19:04,931 Reid_Generalization INFO: Epoch[37] Iteration[203/203] Loss: 1.057, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 05:19:54,956 Reid_Generalization INFO: Epoch[38] Iteration[203/203] Loss: 1.055, Acc: 1.000, Base Lr: 5.00e-03
+2021-05-13 05:20:51,062 Reid_Generalization INFO: Epoch[39] Iteration[203/203] Loss: 1.056, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 05:21:47,794 Reid_Generalization INFO: Epoch[40] Iteration[203/203] Loss: 1.058, Acc: 0.999, Base Lr: 5.00e-03
+2021-05-13 05:31:51,046 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 40
+2021-05-13 05:31:51,050 Reid_Generalization INFO: mAP: 8.7%
+2021-05-13 05:31:51,051 Reid_Generalization INFO: CMC curve, Rank-1  :28.7%
+2021-05-13 05:31:51,055 Reid_Generalization INFO: CMC curve, Rank-5  :52.7%
+2021-05-13 05:31:51,056 Reid_Generalization INFO: CMC curve, Rank-10 :61.1%
+2021-05-13 05:38:29,191 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 40
+2021-05-13 05:38:29,197 Reid_Generalization INFO: mAP: 15.1%
+2021-05-13 05:38:29,199 Reid_Generalization INFO: CMC curve, Rank-1  :39.5%
+2021-05-13 05:38:29,200 Reid_Generalization INFO: CMC curve, Rank-5  :53.9%
+2021-05-13 05:38:29,201 Reid_Generalization INFO: CMC curve, Rank-10 :65.8%
+2021-05-13 05:39:27,107 Reid_Generalization INFO: Epoch[41] Iteration[203/203] Loss: 1.047, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 05:40:21,814 Reid_Generalization INFO: Epoch[42] Iteration[203/203] Loss: 1.044, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 05:41:14,619 Reid_Generalization INFO: Epoch[43] Iteration[203/203] Loss: 1.042, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 05:42:14,115 Reid_Generalization INFO: Epoch[44] Iteration[203/203] Loss: 1.041, Acc: 0.999, Base Lr: 5.00e-04
+2021-05-13 05:43:08,427 Reid_Generalization INFO: Epoch[45] Iteration[203/203] Loss: 1.042, Acc: 0.999, Base Lr: 5.00e-04
+2021-05-13 05:43:55,817 Reid_Generalization INFO: Epoch[46] Iteration[203/203] Loss: 1.040, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 05:44:44,403 Reid_Generalization INFO: Epoch[47] Iteration[203/203] Loss: 1.040, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 05:45:32,679 Reid_Generalization INFO: Epoch[48] Iteration[203/203] Loss: 1.039, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 05:46:19,823 Reid_Generalization INFO: Epoch[49] Iteration[203/203] Loss: 1.041, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 05:47:06,178 Reid_Generalization INFO: Epoch[50] Iteration[203/203] Loss: 1.039, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 05:55:42,462 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 50
+2021-05-13 05:55:42,463 Reid_Generalization INFO: mAP: 9.0%
+2021-05-13 05:55:42,464 Reid_Generalization INFO: CMC curve, Rank-1  :33.8%
+2021-05-13 05:55:42,464 Reid_Generalization INFO: CMC curve, Rank-5  :53.5%
+2021-05-13 05:55:42,464 Reid_Generalization INFO: CMC curve, Rank-10 :61.1%
+2021-05-13 06:01:04,967 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 50
+2021-05-13 06:01:04,970 Reid_Generalization INFO: mAP: 15.4%
+2021-05-13 06:01:04,970 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2021-05-13 06:01:04,970 Reid_Generalization INFO: CMC curve, Rank-5  :54.6%
+2021-05-13 06:01:04,971 Reid_Generalization INFO: CMC curve, Rank-10 :65.1%
+2021-05-13 06:01:50,994 Reid_Generalization INFO: Epoch[51] Iteration[203/203] Loss: 1.039, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:02:47,049 Reid_Generalization INFO: Epoch[52] Iteration[203/203] Loss: 1.039, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:03:40,215 Reid_Generalization INFO: Epoch[53] Iteration[203/203] Loss: 1.038, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:04:31,745 Reid_Generalization INFO: Epoch[54] Iteration[203/203] Loss: 1.037, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:05:24,901 Reid_Generalization INFO: Epoch[55] Iteration[203/203] Loss: 1.038, Acc: 0.999, Base Lr: 5.00e-04
+2021-05-13 06:06:17,538 Reid_Generalization INFO: Epoch[56] Iteration[203/203] Loss: 1.039, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:07:03,972 Reid_Generalization INFO: Epoch[57] Iteration[203/203] Loss: 1.039, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:07:54,982 Reid_Generalization INFO: Epoch[58] Iteration[203/203] Loss: 1.039, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:08:45,292 Reid_Generalization INFO: Epoch[59] Iteration[203/203] Loss: 1.037, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:09:33,933 Reid_Generalization INFO: Epoch[60] Iteration[203/203] Loss: 1.037, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:18:02,748 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 60
+2021-05-13 06:18:02,749 Reid_Generalization INFO: mAP: 8.9%
+2021-05-13 06:18:02,750 Reid_Generalization INFO: CMC curve, Rank-1  :34.1%
+2021-05-13 06:18:02,751 Reid_Generalization INFO: CMC curve, Rank-5  :52.1%
+2021-05-13 06:18:02,751 Reid_Generalization INFO: CMC curve, Rank-10 :61.1%
+2021-05-13 06:23:22,473 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 60
+2021-05-13 06:23:22,476 Reid_Generalization INFO: mAP: 15.2%
+2021-05-13 06:23:22,477 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2021-05-13 06:23:22,479 Reid_Generalization INFO: CMC curve, Rank-5  :56.6%
+2021-05-13 06:23:22,479 Reid_Generalization INFO: CMC curve, Rank-10 :65.1%
+2021-05-13 06:24:11,289 Reid_Generalization INFO: Epoch[61] Iteration[203/203] Loss: 1.037, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:24:59,084 Reid_Generalization INFO: Epoch[62] Iteration[203/203] Loss: 1.036, Acc: 0.999, Base Lr: 5.00e-04
+2021-05-13 06:25:42,417 Reid_Generalization INFO: Epoch[63] Iteration[203/203] Loss: 1.037, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:26:29,702 Reid_Generalization INFO: Epoch[64] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:27:19,259 Reid_Generalization INFO: Epoch[65] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:28:06,875 Reid_Generalization INFO: Epoch[66] Iteration[203/203] Loss: 1.038, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:28:55,037 Reid_Generalization INFO: Epoch[67] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:29:43,272 Reid_Generalization INFO: Epoch[68] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:30:22,138 Reid_Generalization INFO: Epoch[69] Iteration[203/203] Loss: 1.038, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:31:10,500 Reid_Generalization INFO: Epoch[70] Iteration[203/203] Loss: 1.038, Acc: 0.999, Base Lr: 5.00e-04
+2021-05-13 06:39:41,971 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 70
+2021-05-13 06:39:41,980 Reid_Generalization INFO: mAP: 9.0%
+2021-05-13 06:39:41,988 Reid_Generalization INFO: CMC curve, Rank-1  :32.7%
+2021-05-13 06:39:41,996 Reid_Generalization INFO: CMC curve, Rank-5  :52.1%
+2021-05-13 06:39:42,004 Reid_Generalization INFO: CMC curve, Rank-10 :61.7%
+2021-05-13 06:45:16,031 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 70
+2021-05-13 06:45:16,032 Reid_Generalization INFO: mAP: 15.4%
+2021-05-13 06:45:16,032 Reid_Generalization INFO: CMC curve, Rank-1  :40.8%
+2021-05-13 06:45:16,032 Reid_Generalization INFO: CMC curve, Rank-5  :56.6%
+2021-05-13 06:45:16,033 Reid_Generalization INFO: CMC curve, Rank-10 :65.8%
+2021-05-13 06:46:02,739 Reid_Generalization INFO: Epoch[71] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:46:50,494 Reid_Generalization INFO: Epoch[72] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:47:36,008 Reid_Generalization INFO: Epoch[73] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:48:15,583 Reid_Generalization INFO: Epoch[74] Iteration[203/203] Loss: 1.037, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:49:01,846 Reid_Generalization INFO: Epoch[75] Iteration[203/203] Loss: 1.036, Acc: 0.999, Base Lr: 5.00e-04
+2021-05-13 06:49:48,474 Reid_Generalization INFO: Epoch[76] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:50:34,844 Reid_Generalization INFO: Epoch[77] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:51:23,146 Reid_Generalization INFO: Epoch[78] Iteration[203/203] Loss: 1.037, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:52:08,398 Reid_Generalization INFO: Epoch[79] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 06:52:56,452 Reid_Generalization INFO: Epoch[80] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-04
+2021-05-13 07:01:21,256 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 80
+2021-05-13 07:01:21,261 Reid_Generalization INFO: mAP: 8.9%
+2021-05-13 07:01:21,264 Reid_Generalization INFO: CMC curve, Rank-1  :33.0%
+2021-05-13 07:01:21,265 Reid_Generalization INFO: CMC curve, Rank-5  :51.3%
+2021-05-13 07:01:21,265 Reid_Generalization INFO: CMC curve, Rank-10 :58.6%
+2021-05-13 07:07:10,324 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 80
+2021-05-13 07:07:10,330 Reid_Generalization INFO: mAP: 15.0%
+2021-05-13 07:07:10,330 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2021-05-13 07:07:10,330 Reid_Generalization INFO: CMC curve, Rank-5  :54.6%
+2021-05-13 07:07:10,331 Reid_Generalization INFO: CMC curve, Rank-10 :61.8%
+2021-05-13 07:08:01,910 Reid_Generalization INFO: Epoch[81] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 07:08:51,291 Reid_Generalization INFO: Epoch[82] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:09:38,682 Reid_Generalization INFO: Epoch[83] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:10:30,605 Reid_Generalization INFO: Epoch[84] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:11:20,289 Reid_Generalization INFO: Epoch[85] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:12:07,984 Reid_Generalization INFO: Epoch[86] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:12:58,345 Reid_Generalization INFO: Epoch[87] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:13:47,399 Reid_Generalization INFO: Epoch[88] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:14:35,117 Reid_Generalization INFO: Epoch[89] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:15:25,827 Reid_Generalization INFO: Epoch[90] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:23:50,193 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 90
+2021-05-13 07:23:50,195 Reid_Generalization INFO: mAP: 8.9%
+2021-05-13 07:23:50,195 Reid_Generalization INFO: CMC curve, Rank-1  :33.5%
+2021-05-13 07:23:50,196 Reid_Generalization INFO: CMC curve, Rank-5  :51.0%
+2021-05-13 07:23:50,196 Reid_Generalization INFO: CMC curve, Rank-10 :60.0%
+2021-05-13 07:29:13,704 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 90
+2021-05-13 07:29:13,716 Reid_Generalization INFO: mAP: 15.2%
+2021-05-13 07:29:13,717 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2021-05-13 07:29:13,717 Reid_Generalization INFO: CMC curve, Rank-5  :54.6%
+2021-05-13 07:29:13,717 Reid_Generalization INFO: CMC curve, Rank-10 :61.8%
+2021-05-13 07:30:03,782 Reid_Generalization INFO: Epoch[91] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:30:54,849 Reid_Generalization INFO: Epoch[92] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:31:44,628 Reid_Generalization INFO: Epoch[93] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:32:31,902 Reid_Generalization INFO: Epoch[94] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:33:20,658 Reid_Generalization INFO: Epoch[95] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:34:10,717 Reid_Generalization INFO: Epoch[96] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:35:09,901 Reid_Generalization INFO: Epoch[97] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:36:02,109 Reid_Generalization INFO: Epoch[98] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:36:58,598 Reid_Generalization INFO: Epoch[99] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:38:03,477 Reid_Generalization INFO: Epoch[100] Iteration[203/203] Loss: 1.034, Acc: 0.999, Base Lr: 5.00e-05
+2021-05-13 07:45:49,622 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 100
+2021-05-13 07:45:49,623 Reid_Generalization INFO: mAP: 8.8%
+2021-05-13 07:45:49,623 Reid_Generalization INFO: CMC curve, Rank-1  :32.4%
+2021-05-13 07:45:49,624 Reid_Generalization INFO: CMC curve, Rank-5  :51.3%
+2021-05-13 07:45:49,624 Reid_Generalization INFO: CMC curve, Rank-10 :61.1%
+2021-05-13 07:50:52,275 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 100
+2021-05-13 07:50:52,276 Reid_Generalization INFO: mAP: 15.2%
+2021-05-13 07:50:52,277 Reid_Generalization INFO: CMC curve, Rank-1  :40.8%
+2021-05-13 07:50:52,277 Reid_Generalization INFO: CMC curve, Rank-5  :55.3%
+2021-05-13 07:50:52,277 Reid_Generalization INFO: CMC curve, Rank-10 :62.5%
+2021-05-13 07:51:58,605 Reid_Generalization INFO: Epoch[101] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:52:58,435 Reid_Generalization INFO: Epoch[102] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:53:47,391 Reid_Generalization INFO: Epoch[103] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:54:36,563 Reid_Generalization INFO: Epoch[104] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:55:24,845 Reid_Generalization INFO: Epoch[105] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:56:10,004 Reid_Generalization INFO: Epoch[106] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:56:57,868 Reid_Generalization INFO: Epoch[107] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:57:44,009 Reid_Generalization INFO: Epoch[108] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:58:32,631 Reid_Generalization INFO: Epoch[109] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 07:59:22,138 Reid_Generalization INFO: Epoch[110] Iteration[203/203] Loss: 1.034, Acc: 0.999, Base Lr: 5.00e-05
+2021-05-13 08:08:03,976 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 110
+2021-05-13 08:08:03,981 Reid_Generalization INFO: mAP: 8.8%
+2021-05-13 08:08:03,982 Reid_Generalization INFO: CMC curve, Rank-1  :32.1%
+2021-05-13 08:08:03,985 Reid_Generalization INFO: CMC curve, Rank-5  :51.5%
+2021-05-13 08:08:03,986 Reid_Generalization INFO: CMC curve, Rank-10 :59.7%
+2021-05-13 08:13:50,650 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 110
+2021-05-13 08:13:50,651 Reid_Generalization INFO: mAP: 15.0%
+2021-05-13 08:13:50,653 Reid_Generalization INFO: CMC curve, Rank-1  :39.5%
+2021-05-13 08:13:50,653 Reid_Generalization INFO: CMC curve, Rank-5  :55.9%
+2021-05-13 08:13:50,654 Reid_Generalization INFO: CMC curve, Rank-10 :60.5%
+2021-05-13 08:14:38,713 Reid_Generalization INFO: Epoch[111] Iteration[203/203] Loss: 1.032, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 08:15:27,276 Reid_Generalization INFO: Epoch[112] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 08:16:19,985 Reid_Generalization INFO: Epoch[113] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 08:17:08,585 Reid_Generalization INFO: Epoch[114] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 08:17:57,048 Reid_Generalization INFO: Epoch[115] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 08:18:41,822 Reid_Generalization INFO: Epoch[116] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 08:19:28,990 Reid_Generalization INFO: Epoch[117] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 08:20:18,337 Reid_Generalization INFO: Epoch[118] Iteration[203/203] Loss: 1.033, Acc: 0.999, Base Lr: 5.00e-05
+2021-05-13 08:21:05,937 Reid_Generalization INFO: Epoch[119] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-05
+2021-05-13 08:21:56,912 Reid_Generalization INFO: Epoch[120] Iteration[203/203] Loss: 1.035, Acc: 0.999, Base Lr: 5.00e-05
+2021-05-13 08:30:10,802 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 120
+2021-05-13 08:30:10,832 Reid_Generalization INFO: mAP: 8.8%
+2021-05-13 08:30:10,835 Reid_Generalization INFO: CMC curve, Rank-1  :32.1%
+2021-05-13 08:30:10,836 Reid_Generalization INFO: CMC curve, Rank-5  :50.4%
+2021-05-13 08:30:10,836 Reid_Generalization INFO: CMC curve, Rank-10 :60.0%
+2021-05-13 08:35:57,333 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 120
+2021-05-13 08:35:57,342 Reid_Generalization INFO: mAP: 15.2%
+2021-05-13 08:35:57,344 Reid_Generalization INFO: CMC curve, Rank-1  :40.8%
+2021-05-13 08:35:57,345 Reid_Generalization INFO: CMC curve, Rank-5  :53.9%
+2021-05-13 08:35:57,346 Reid_Generalization INFO: CMC curve, Rank-10 :62.5%
+2021-05-13 08:36:46,823 Reid_Generalization INFO: Epoch[121] Iteration[203/203] Loss: 1.032, Acc: 1.000, Base Lr: 5.00e-07
+2021-05-13 08:37:38,671 Reid_Generalization INFO: Epoch[122] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:38:27,494 Reid_Generalization INFO: Epoch[123] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:39:17,222 Reid_Generalization INFO: Epoch[124] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:40:03,866 Reid_Generalization INFO: Epoch[125] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:40:54,970 Reid_Generalization INFO: Epoch[126] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:41:45,015 Reid_Generalization INFO: Epoch[127] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:42:34,823 Reid_Generalization INFO: Epoch[128] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:43:24,060 Reid_Generalization INFO: Epoch[129] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:44:08,741 Reid_Generalization INFO: Epoch[130] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 08:52:44,332 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 130
+2021-05-13 08:52:44,337 Reid_Generalization INFO: mAP: 8.9%
+2021-05-13 08:52:44,337 Reid_Generalization INFO: CMC curve, Rank-1  :32.1%
+2021-05-13 08:52:44,339 Reid_Generalization INFO: CMC curve, Rank-5  :51.8%
+2021-05-13 08:52:44,342 Reid_Generalization INFO: CMC curve, Rank-10 :60.0%
+2021-05-13 08:58:28,330 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 130
+2021-05-13 08:58:28,332 Reid_Generalization INFO: mAP: 15.2%
+2021-05-13 08:58:28,332 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2021-05-13 08:58:28,332 Reid_Generalization INFO: CMC curve, Rank-5  :54.6%
+2021-05-13 08:58:28,332 Reid_Generalization INFO: CMC curve, Rank-10 :63.2%
+2021-05-13 08:59:20,125 Reid_Generalization INFO: Epoch[131] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:00:10,076 Reid_Generalization INFO: Epoch[132] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:00:56,814 Reid_Generalization INFO: Epoch[133] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:01:50,151 Reid_Generalization INFO: Epoch[134] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:02:41,753 Reid_Generalization INFO: Epoch[135] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:03:33,011 Reid_Generalization INFO: Epoch[136] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:04:20,558 Reid_Generalization INFO: Epoch[137] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:05:06,222 Reid_Generalization INFO: Epoch[138] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:05:58,204 Reid_Generalization INFO: Epoch[139] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:06:50,697 Reid_Generalization INFO: Epoch[140] Iteration[203/203] Loss: 1.037, Acc: 0.999, Base Lr: 5.00e-06
+2021-05-13 09:16:32,268 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 140
+2021-05-13 09:16:32,273 Reid_Generalization INFO: mAP: 8.9%
+2021-05-13 09:16:32,274 Reid_Generalization INFO: CMC curve, Rank-1  :30.7%
+2021-05-13 09:16:32,275 Reid_Generalization INFO: CMC curve, Rank-5  :50.4%
+2021-05-13 09:16:32,276 Reid_Generalization INFO: CMC curve, Rank-10 :59.7%
+2021-05-13 09:22:51,160 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 140
+2021-05-13 09:22:51,163 Reid_Generalization INFO: mAP: 15.2%
+2021-05-13 09:22:51,164 Reid_Generalization INFO: CMC curve, Rank-1  :41.4%
+2021-05-13 09:22:51,164 Reid_Generalization INFO: CMC curve, Rank-5  :53.9%
+2021-05-13 09:22:51,165 Reid_Generalization INFO: CMC curve, Rank-10 :64.5%
+2021-05-13 09:23:51,681 Reid_Generalization INFO: Epoch[141] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:24:41,786 Reid_Generalization INFO: Epoch[142] Iteration[203/203] Loss: 1.040, Acc: 0.999, Base Lr: 5.00e-06
+2021-05-13 09:25:37,057 Reid_Generalization INFO: Epoch[143] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:26:30,848 Reid_Generalization INFO: Epoch[144] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:27:24,182 Reid_Generalization INFO: Epoch[145] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:28:15,507 Reid_Generalization INFO: Epoch[146] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:29:08,941 Reid_Generalization INFO: Epoch[147] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:30:04,075 Reid_Generalization INFO: Epoch[148] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:30:57,587 Reid_Generalization INFO: Epoch[149] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:31:51,109 Reid_Generalization INFO: Epoch[150] Iteration[203/203] Loss: 1.034, Acc: 0.999, Base Lr: 5.00e-06
+2021-05-13 09:41:30,006 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 150
+2021-05-13 09:41:30,034 Reid_Generalization INFO: mAP: 8.9%
+2021-05-13 09:41:30,034 Reid_Generalization INFO: CMC curve, Rank-1  :32.1%
+2021-05-13 09:41:30,035 Reid_Generalization INFO: CMC curve, Rank-5  :51.0%
+2021-05-13 09:41:30,035 Reid_Generalization INFO: CMC curve, Rank-10 :59.4%
+2021-05-13 09:46:40,163 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 150
+2021-05-13 09:46:40,164 Reid_Generalization INFO: mAP: 15.1%
+2021-05-13 09:46:40,164 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2021-05-13 09:46:40,165 Reid_Generalization INFO: CMC curve, Rank-5  :53.9%
+2021-05-13 09:46:40,165 Reid_Generalization INFO: CMC curve, Rank-10 :61.8%
+2021-05-13 09:47:31,260 Reid_Generalization INFO: Epoch[151] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:48:22,286 Reid_Generalization INFO: Epoch[152] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:49:07,138 Reid_Generalization INFO: Epoch[153] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:49:52,205 Reid_Generalization INFO: Epoch[154] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:50:35,896 Reid_Generalization INFO: Epoch[155] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:51:14,974 Reid_Generalization INFO: Epoch[156] Iteration[203/203] Loss: 1.034, Acc: 0.999, Base Lr: 5.00e-06
+2021-05-13 09:51:56,576 Reid_Generalization INFO: Epoch[157] Iteration[203/203] Loss: 1.033, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:52:39,968 Reid_Generalization INFO: Epoch[158] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:53:24,235 Reid_Generalization INFO: Epoch[159] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 09:54:08,071 Reid_Generalization INFO: Epoch[160] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-06
+2021-05-13 10:01:01,637 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_black - Epoch: 160
+2021-05-13 10:01:01,656 Reid_Generalization INFO: mAP: 8.9%
+2021-05-13 10:01:01,657 Reid_Generalization INFO: CMC curve, Rank-1  :32.1%
+2021-05-13 10:01:01,657 Reid_Generalization INFO: CMC curve, Rank-5  :52.4%
+2021-05-13 10:01:01,657 Reid_Generalization INFO: CMC curve, Rank-10 :59.7%
+2021-05-13 10:05:41,763 Reid_Generalization INFO: Validation Results: NTUOutdoorv2_white - Epoch: 160
+2021-05-13 10:05:41,764 Reid_Generalization INFO: mAP: 15.4%
+2021-05-13 10:05:41,764 Reid_Generalization INFO: CMC curve, Rank-1  :40.1%
+2021-05-13 10:05:41,764 Reid_Generalization INFO: CMC curve, Rank-5  :56.6%
+2021-05-13 10:05:41,765 Reid_Generalization INFO: CMC curve, Rank-10 :62.5%
+2021-05-13 10:05:41,765 Reid_Generalization INFO: Training complete in 366m 24s
+2021-05-13 10:05:41,765 Reid_Generalization INFO: ----------

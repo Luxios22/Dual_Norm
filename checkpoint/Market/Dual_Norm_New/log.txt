@@ -1,0 +1,311 @@
+2021-07-14 02:12:17,232 Reid_Generalization INFO: Using 1 GPUS
+2021-07-14 02:12:17,232 Reid_Generalization INFO: Loaded configuration file config/dual_norm_bkup.yaml
+2021-07-14 02:12:17,233 Reid_Generalization INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 32
+  NUM_WORKERS: 8
+DATASETS:
+  MERGE: True
+  SOURCE: ['Market-1501']
+  STORE_DIR: /home/GTA
+  TARGET: ['Market-1501']
+DEVICE: cuda:6
+INPUT:
+  BRIGHTNESS: [1.0, 1.0]
+  CONTRAST: 0.0
+  HF_PROB: 0.5
+  HUE: 0.0
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+  RE: False
+  RE_PROB: 0.5
+  SATURATION: 0.0
+  SIZE_TEST: [384, 128]
+  SIZE_TRAIN: [384, 128]
+MODEL:
+  CLASS_PARAM: 1.0
+  D_PARAM: 1.0
+  G_PARAM: 1.0
+  LAST_STRIDE: 2
+  NAME: resnet50_ifn
+  POOL: AVG
+OUTPUT_DIR: ./checkpoint/Market/Dual_Norm_New
+RE_RANKING: False
+SOLVER:
+  BASE_LR: 0.1
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 10
+  DELAY_ITERS: 100
+  ETA_MIN_LR: 3e-07
+  EVAL_PERIOD: 10
+  GAMMA: 0.1
+  IMS_PER_BATCH: 64
+  LAMBDA1: 1.0
+  LAMBDA2: 1.0
+  LOSS: softmax
+  MARGIN: 0.3
+  MAX_EPOCHS: 160
+  MOMENTUM: 0.9
+  NESTEROV: True
+  OPTIMIZER_NAME: SGD
+  SCHED: StepLR
+  STEP: 40
+  TRI:
+    HARD_MINING: True
+    MARGIN: 0.3
+    NORM_FEAT: False
+    SCALE: 1.0
+    USE_COSINE_DIST: False
+  WARMUP_FACTOR: 0.3333333333333333
+  WARMUP_ITERS: 500
+  WARMUP_METHOD: linear
+  WARMUP_STEPS: [30, 55]
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0
+TEST:
+  IMS_PER_BATCH: 1
+  LOAD_EPOCH: 160
+2021-07-14 02:12:19,322 Reid_Generalization INFO: Start training
+2021-07-14 02:14:18,426 Reid_Generalization INFO: Epoch[1] Iteration[203/203] Loss: 4.560, Acc: 0.295, Base Lr: 5.00e-03
+2021-07-14 02:15:42,344 Reid_Generalization INFO: Epoch[2] Iteration[203/203] Loss: 1.936, Acc: 0.829, Base Lr: 5.00e-03
+2021-07-14 02:17:06,520 Reid_Generalization INFO: Epoch[3] Iteration[203/203] Loss: 1.388, Acc: 0.963, Base Lr: 5.00e-03
+2021-07-14 02:18:31,252 Reid_Generalization INFO: Epoch[4] Iteration[203/203] Loss: 1.232, Acc: 0.991, Base Lr: 5.00e-03
+2021-07-14 02:19:56,640 Reid_Generalization INFO: Epoch[5] Iteration[203/203] Loss: 1.172, Acc: 0.997, Base Lr: 5.00e-03
+2021-07-14 02:21:21,791 Reid_Generalization INFO: Epoch[6] Iteration[203/203] Loss: 1.140, Acc: 0.999, Base Lr: 5.00e-03
+2021-07-14 02:22:46,626 Reid_Generalization INFO: Epoch[7] Iteration[203/203] Loss: 1.124, Acc: 0.999, Base Lr: 5.00e-03
+2021-07-14 02:24:11,559 Reid_Generalization INFO: Epoch[8] Iteration[203/203] Loss: 1.109, Acc: 0.999, Base Lr: 5.00e-03
+2021-07-14 02:25:36,095 Reid_Generalization INFO: Epoch[9] Iteration[203/203] Loss: 1.102, Acc: 0.999, Base Lr: 5.00e-03
+2021-07-14 02:27:01,010 Reid_Generalization INFO: Epoch[10] Iteration[203/203] Loss: 1.094, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:38:22,206 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 10
+2021-07-14 02:38:22,220 Reid_Generalization INFO: mAP: 54.2%
+2021-07-14 02:38:22,220 Reid_Generalization INFO: CMC curve, Rank-1  :80.8%
+2021-07-14 02:38:22,221 Reid_Generalization INFO: CMC curve, Rank-5  :92.3%
+2021-07-14 02:38:22,221 Reid_Generalization INFO: CMC curve, Rank-10 :94.5%
+2021-07-14 02:39:44,795 Reid_Generalization INFO: Epoch[11] Iteration[203/203] Loss: 1.086, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:41:07,540 Reid_Generalization INFO: Epoch[12] Iteration[203/203] Loss: 1.081, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:42:30,661 Reid_Generalization INFO: Epoch[13] Iteration[203/203] Loss: 1.077, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:43:53,678 Reid_Generalization INFO: Epoch[14] Iteration[203/203] Loss: 1.072, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:45:17,089 Reid_Generalization INFO: Epoch[15] Iteration[203/203] Loss: 1.069, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:46:40,181 Reid_Generalization INFO: Epoch[16] Iteration[203/203] Loss: 1.067, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:48:03,442 Reid_Generalization INFO: Epoch[17] Iteration[203/203] Loss: 1.064, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:49:26,682 Reid_Generalization INFO: Epoch[18] Iteration[203/203] Loss: 1.061, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:50:49,965 Reid_Generalization INFO: Epoch[19] Iteration[203/203] Loss: 1.059, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 02:52:13,078 Reid_Generalization INFO: Epoch[20] Iteration[203/203] Loss: 1.057, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:03:27,561 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 20
+2021-07-14 03:03:27,608 Reid_Generalization INFO: mAP: 58.0%
+2021-07-14 03:03:27,609 Reid_Generalization INFO: CMC curve, Rank-1  :83.1%
+2021-07-14 03:03:27,609 Reid_Generalization INFO: CMC curve, Rank-5  :93.2%
+2021-07-14 03:03:27,609 Reid_Generalization INFO: CMC curve, Rank-10 :95.5%
+2021-07-14 03:04:49,428 Reid_Generalization INFO: Epoch[21] Iteration[203/203] Loss: 1.055, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:06:11,074 Reid_Generalization INFO: Epoch[22] Iteration[203/203] Loss: 1.052, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:07:33,885 Reid_Generalization INFO: Epoch[23] Iteration[203/203] Loss: 1.051, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:08:56,277 Reid_Generalization INFO: Epoch[24] Iteration[203/203] Loss: 1.051, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:10:18,336 Reid_Generalization INFO: Epoch[25] Iteration[203/203] Loss: 1.050, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:11:40,820 Reid_Generalization INFO: Epoch[26] Iteration[203/203] Loss: 1.047, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:13:03,698 Reid_Generalization INFO: Epoch[27] Iteration[203/203] Loss: 1.045, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:14:26,984 Reid_Generalization INFO: Epoch[28] Iteration[203/203] Loss: 1.044, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:15:50,050 Reid_Generalization INFO: Epoch[29] Iteration[203/203] Loss: 1.043, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:17:12,923 Reid_Generalization INFO: Epoch[30] Iteration[203/203] Loss: 1.042, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:28:39,559 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 30
+2021-07-14 03:28:39,564 Reid_Generalization INFO: mAP: 60.0%
+2021-07-14 03:28:39,565 Reid_Generalization INFO: CMC curve, Rank-1  :84.6%
+2021-07-14 03:28:39,565 Reid_Generalization INFO: CMC curve, Rank-5  :93.1%
+2021-07-14 03:28:39,565 Reid_Generalization INFO: CMC curve, Rank-10 :95.4%
+2021-07-14 03:30:02,116 Reid_Generalization INFO: Epoch[31] Iteration[203/203] Loss: 1.041, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:31:25,307 Reid_Generalization INFO: Epoch[32] Iteration[203/203] Loss: 1.041, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:32:48,125 Reid_Generalization INFO: Epoch[33] Iteration[203/203] Loss: 1.038, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:34:10,890 Reid_Generalization INFO: Epoch[34] Iteration[203/203] Loss: 1.038, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:35:33,728 Reid_Generalization INFO: Epoch[35] Iteration[203/203] Loss: 1.038, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:36:56,644 Reid_Generalization INFO: Epoch[36] Iteration[203/203] Loss: 1.036, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:38:19,504 Reid_Generalization INFO: Epoch[37] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:39:42,692 Reid_Generalization INFO: Epoch[38] Iteration[203/203] Loss: 1.034, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:41:05,968 Reid_Generalization INFO: Epoch[39] Iteration[203/203] Loss: 1.035, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:42:29,249 Reid_Generalization INFO: Epoch[40] Iteration[203/203] Loss: 1.032, Acc: 1.000, Base Lr: 5.00e-03
+2021-07-14 03:53:46,325 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 40
+2021-07-14 03:53:46,330 Reid_Generalization INFO: mAP: 61.5%
+2021-07-14 03:53:46,330 Reid_Generalization INFO: CMC curve, Rank-1  :85.2%
+2021-07-14 03:53:46,330 Reid_Generalization INFO: CMC curve, Rank-5  :93.7%
+2021-07-14 03:53:46,330 Reid_Generalization INFO: CMC curve, Rank-10 :95.8%
+2021-07-14 03:55:07,291 Reid_Generalization INFO: Epoch[41] Iteration[203/203] Loss: 1.030, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 03:56:29,141 Reid_Generalization INFO: Epoch[42] Iteration[203/203] Loss: 1.030, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 03:57:51,144 Reid_Generalization INFO: Epoch[43] Iteration[203/203] Loss: 1.029, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 03:59:13,053 Reid_Generalization INFO: Epoch[44] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:00:37,863 Reid_Generalization INFO: Epoch[45] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:02:00,260 Reid_Generalization INFO: Epoch[46] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:03:22,036 Reid_Generalization INFO: Epoch[47] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:04:44,224 Reid_Generalization INFO: Epoch[48] Iteration[203/203] Loss: 1.029, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:06:05,849 Reid_Generalization INFO: Epoch[49] Iteration[203/203] Loss: 1.029, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:07:28,938 Reid_Generalization INFO: Epoch[50] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:18:39,446 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 50
+2021-07-14 04:18:39,447 Reid_Generalization INFO: mAP: 61.5%
+2021-07-14 04:18:39,447 Reid_Generalization INFO: CMC curve, Rank-1  :85.2%
+2021-07-14 04:18:39,447 Reid_Generalization INFO: CMC curve, Rank-5  :93.9%
+2021-07-14 04:18:39,447 Reid_Generalization INFO: CMC curve, Rank-10 :95.8%
+2021-07-14 04:20:01,549 Reid_Generalization INFO: Epoch[51] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:21:24,359 Reid_Generalization INFO: Epoch[52] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:22:47,657 Reid_Generalization INFO: Epoch[53] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:24:10,882 Reid_Generalization INFO: Epoch[54] Iteration[203/203] Loss: 1.029, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:25:33,570 Reid_Generalization INFO: Epoch[55] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:26:57,201 Reid_Generalization INFO: Epoch[56] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:28:20,433 Reid_Generalization INFO: Epoch[57] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:29:43,664 Reid_Generalization INFO: Epoch[58] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:31:07,266 Reid_Generalization INFO: Epoch[59] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:32:30,202 Reid_Generalization INFO: Epoch[60] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:43:41,422 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 60
+2021-07-14 04:43:41,427 Reid_Generalization INFO: mAP: 61.7%
+2021-07-14 04:43:41,427 Reid_Generalization INFO: CMC curve, Rank-1  :85.2%
+2021-07-14 04:43:41,428 Reid_Generalization INFO: CMC curve, Rank-5  :93.9%
+2021-07-14 04:43:41,428 Reid_Generalization INFO: CMC curve, Rank-10 :95.7%
+2021-07-14 04:45:03,983 Reid_Generalization INFO: Epoch[61] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:46:26,812 Reid_Generalization INFO: Epoch[62] Iteration[203/203] Loss: 1.028, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:47:50,278 Reid_Generalization INFO: Epoch[63] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:49:13,220 Reid_Generalization INFO: Epoch[64] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:50:36,094 Reid_Generalization INFO: Epoch[65] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:51:59,866 Reid_Generalization INFO: Epoch[66] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:53:22,946 Reid_Generalization INFO: Epoch[67] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:54:46,156 Reid_Generalization INFO: Epoch[68] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:56:09,666 Reid_Generalization INFO: Epoch[69] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 04:57:32,745 Reid_Generalization INFO: Epoch[70] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:08:46,544 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 70
+2021-07-14 05:08:46,545 Reid_Generalization INFO: mAP: 61.8%
+2021-07-14 05:08:46,545 Reid_Generalization INFO: CMC curve, Rank-1  :85.4%
+2021-07-14 05:08:46,546 Reid_Generalization INFO: CMC curve, Rank-5  :93.7%
+2021-07-14 05:08:46,546 Reid_Generalization INFO: CMC curve, Rank-10 :95.8%
+2021-07-14 05:10:08,822 Reid_Generalization INFO: Epoch[71] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:11:31,565 Reid_Generalization INFO: Epoch[72] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:12:54,862 Reid_Generalization INFO: Epoch[73] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:14:17,736 Reid_Generalization INFO: Epoch[74] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:15:40,849 Reid_Generalization INFO: Epoch[75] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:17:03,798 Reid_Generalization INFO: Epoch[76] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:18:26,754 Reid_Generalization INFO: Epoch[77] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:19:49,521 Reid_Generalization INFO: Epoch[78] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:21:12,384 Reid_Generalization INFO: Epoch[79] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:22:35,417 Reid_Generalization INFO: Epoch[80] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-04
+2021-07-14 05:33:50,445 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 80
+2021-07-14 05:33:50,446 Reid_Generalization INFO: mAP: 61.7%
+2021-07-14 05:33:50,446 Reid_Generalization INFO: CMC curve, Rank-1  :85.4%
+2021-07-14 05:33:50,446 Reid_Generalization INFO: CMC curve, Rank-5  :93.8%
+2021-07-14 05:33:50,446 Reid_Generalization INFO: CMC curve, Rank-10 :95.7%
+2021-07-14 05:35:13,302 Reid_Generalization INFO: Epoch[81] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 05:36:36,106 Reid_Generalization INFO: Epoch[82] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:37:58,846 Reid_Generalization INFO: Epoch[83] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:39:22,347 Reid_Generalization INFO: Epoch[84] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:40:45,058 Reid_Generalization INFO: Epoch[85] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:42:08,219 Reid_Generalization INFO: Epoch[86] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:43:31,382 Reid_Generalization INFO: Epoch[87] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:44:54,687 Reid_Generalization INFO: Epoch[88] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:46:17,605 Reid_Generalization INFO: Epoch[89] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:47:40,797 Reid_Generalization INFO: Epoch[90] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 05:59:02,280 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 90
+2021-07-14 05:59:02,284 Reid_Generalization INFO: mAP: 61.9%
+2021-07-14 05:59:02,284 Reid_Generalization INFO: CMC curve, Rank-1  :85.5%
+2021-07-14 05:59:02,285 Reid_Generalization INFO: CMC curve, Rank-5  :93.8%
+2021-07-14 05:59:02,285 Reid_Generalization INFO: CMC curve, Rank-10 :96.1%
+2021-07-14 06:00:29,433 Reid_Generalization INFO: Epoch[91] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:01:52,850 Reid_Generalization INFO: Epoch[92] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:03:16,437 Reid_Generalization INFO: Epoch[93] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:04:39,885 Reid_Generalization INFO: Epoch[94] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:06:03,485 Reid_Generalization INFO: Epoch[95] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:07:27,296 Reid_Generalization INFO: Epoch[96] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:08:50,118 Reid_Generalization INFO: Epoch[97] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:10:13,921 Reid_Generalization INFO: Epoch[98] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:11:39,407 Reid_Generalization INFO: Epoch[99] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:13:05,028 Reid_Generalization INFO: Epoch[100] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:26:24,837 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 100
+2021-07-14 06:26:24,838 Reid_Generalization INFO: mAP: 62.0%
+2021-07-14 06:26:24,838 Reid_Generalization INFO: CMC curve, Rank-1  :85.2%
+2021-07-14 06:26:24,839 Reid_Generalization INFO: CMC curve, Rank-5  :93.9%
+2021-07-14 06:26:24,839 Reid_Generalization INFO: CMC curve, Rank-10 :95.9%
+2021-07-14 06:27:50,479 Reid_Generalization INFO: Epoch[101] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:29:17,046 Reid_Generalization INFO: Epoch[102] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:30:43,422 Reid_Generalization INFO: Epoch[103] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:32:09,728 Reid_Generalization INFO: Epoch[104] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:33:36,194 Reid_Generalization INFO: Epoch[105] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:35:01,882 Reid_Generalization INFO: Epoch[106] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:36:28,101 Reid_Generalization INFO: Epoch[107] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:37:54,534 Reid_Generalization INFO: Epoch[108] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:39:21,049 Reid_Generalization INFO: Epoch[109] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:40:46,956 Reid_Generalization INFO: Epoch[110] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:54:07,503 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 110
+2021-07-14 06:54:07,527 Reid_Generalization INFO: mAP: 61.9%
+2021-07-14 06:54:07,528 Reid_Generalization INFO: CMC curve, Rank-1  :85.3%
+2021-07-14 06:54:07,528 Reid_Generalization INFO: CMC curve, Rank-5  :93.9%
+2021-07-14 06:54:07,528 Reid_Generalization INFO: CMC curve, Rank-10 :95.9%
+2021-07-14 06:55:33,101 Reid_Generalization INFO: Epoch[111] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:56:59,411 Reid_Generalization INFO: Epoch[112] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:58:25,109 Reid_Generalization INFO: Epoch[113] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 06:59:50,881 Reid_Generalization INFO: Epoch[114] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 07:01:20,878 Reid_Generalization INFO: Epoch[115] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 07:02:46,704 Reid_Generalization INFO: Epoch[116] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 07:04:12,743 Reid_Generalization INFO: Epoch[117] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 07:05:38,621 Reid_Generalization INFO: Epoch[118] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 07:07:04,697 Reid_Generalization INFO: Epoch[119] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 07:08:30,175 Reid_Generalization INFO: Epoch[120] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-05
+2021-07-14 07:21:46,956 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 120
+2021-07-14 07:21:46,958 Reid_Generalization INFO: mAP: 61.9%
+2021-07-14 07:21:46,958 Reid_Generalization INFO: CMC curve, Rank-1  :85.5%
+2021-07-14 07:21:46,958 Reid_Generalization INFO: CMC curve, Rank-5  :93.8%
+2021-07-14 07:21:46,958 Reid_Generalization INFO: CMC curve, Rank-10 :96.0%
+2021-07-14 07:23:12,460 Reid_Generalization INFO: Epoch[121] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-07
+2021-07-14 07:24:37,631 Reid_Generalization INFO: Epoch[122] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:26:03,062 Reid_Generalization INFO: Epoch[123] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:27:28,891 Reid_Generalization INFO: Epoch[124] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:28:54,693 Reid_Generalization INFO: Epoch[125] Iteration[203/203] Loss: 1.027, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:30:20,480 Reid_Generalization INFO: Epoch[126] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:31:46,032 Reid_Generalization INFO: Epoch[127] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:33:11,498 Reid_Generalization INFO: Epoch[128] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:34:36,991 Reid_Generalization INFO: Epoch[129] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:36:02,833 Reid_Generalization INFO: Epoch[130] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:49:28,365 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 130
+2021-07-14 07:49:28,366 Reid_Generalization INFO: mAP: 62.0%
+2021-07-14 07:49:28,367 Reid_Generalization INFO: CMC curve, Rank-1  :85.2%
+2021-07-14 07:49:28,367 Reid_Generalization INFO: CMC curve, Rank-5  :93.9%
+2021-07-14 07:49:28,367 Reid_Generalization INFO: CMC curve, Rank-10 :95.8%
+2021-07-14 07:50:53,303 Reid_Generalization INFO: Epoch[131] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:52:19,025 Reid_Generalization INFO: Epoch[132] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:53:44,740 Reid_Generalization INFO: Epoch[133] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:55:11,338 Reid_Generalization INFO: Epoch[134] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:56:37,358 Reid_Generalization INFO: Epoch[135] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:58:03,555 Reid_Generalization INFO: Epoch[136] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 07:59:29,574 Reid_Generalization INFO: Epoch[137] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:00:56,736 Reid_Generalization INFO: Epoch[138] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:02:22,714 Reid_Generalization INFO: Epoch[139] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:03:49,318 Reid_Generalization INFO: Epoch[140] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:17:10,253 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 140
+2021-07-14 08:17:10,254 Reid_Generalization INFO: mAP: 61.9%
+2021-07-14 08:17:10,254 Reid_Generalization INFO: CMC curve, Rank-1  :85.2%
+2021-07-14 08:17:10,255 Reid_Generalization INFO: CMC curve, Rank-5  :93.8%
+2021-07-14 08:17:10,255 Reid_Generalization INFO: CMC curve, Rank-10 :95.7%
+2021-07-14 08:18:35,436 Reid_Generalization INFO: Epoch[141] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:20:01,560 Reid_Generalization INFO: Epoch[142] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:21:28,025 Reid_Generalization INFO: Epoch[143] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:22:54,292 Reid_Generalization INFO: Epoch[144] Iteration[203/203] Loss: 1.024, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:24:19,734 Reid_Generalization INFO: Epoch[145] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:25:45,025 Reid_Generalization INFO: Epoch[146] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:27:10,782 Reid_Generalization INFO: Epoch[147] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:28:37,255 Reid_Generalization INFO: Epoch[148] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:30:03,228 Reid_Generalization INFO: Epoch[149] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:31:29,646 Reid_Generalization INFO: Epoch[150] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:44:50,468 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 150
+2021-07-14 08:44:50,469 Reid_Generalization INFO: mAP: 61.8%
+2021-07-14 08:44:50,470 Reid_Generalization INFO: CMC curve, Rank-1  :85.3%
+2021-07-14 08:44:50,470 Reid_Generalization INFO: CMC curve, Rank-5  :93.6%
+2021-07-14 08:44:50,471 Reid_Generalization INFO: CMC curve, Rank-10 :95.8%
+2021-07-14 08:46:15,650 Reid_Generalization INFO: Epoch[151] Iteration[203/203] Loss: 1.026, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:47:41,231 Reid_Generalization INFO: Epoch[152] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:49:07,667 Reid_Generalization INFO: Epoch[153] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:50:33,507 Reid_Generalization INFO: Epoch[154] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:51:59,486 Reid_Generalization INFO: Epoch[155] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:53:24,967 Reid_Generalization INFO: Epoch[156] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:54:50,744 Reid_Generalization INFO: Epoch[157] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:56:18,049 Reid_Generalization INFO: Epoch[158] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:57:42,172 Reid_Generalization INFO: Epoch[159] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 08:59:05,882 Reid_Generalization INFO: Epoch[160] Iteration[203/203] Loss: 1.025, Acc: 1.000, Base Lr: 5.00e-06
+2021-07-14 09:10:20,100 Reid_Generalization INFO: Validation Results: Market-1501 - Epoch: 160
+2021-07-14 09:10:20,120 Reid_Generalization INFO: mAP: 61.9%
+2021-07-14 09:10:20,120 Reid_Generalization INFO: CMC curve, Rank-1  :85.4%
+2021-07-14 09:10:20,120 Reid_Generalization INFO: CMC curve, Rank-5  :94.0%
+2021-07-14 09:10:20,121 Reid_Generalization INFO: CMC curve, Rank-10 :95.9%
+2021-07-14 09:10:20,121 Reid_Generalization INFO: Training complete in 418m 1s
+2021-07-14 09:10:20,121 Reid_Generalization INFO: ----------

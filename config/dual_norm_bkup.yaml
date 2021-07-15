@@ -1,0 +1,38 @@
+MODEL:
+  NAME: 'resnet50_ifn'
+  LAST_STRIDE: 2
+
+INPUT:
+  # SIZE_TRAIN: [128, 43]
+  # SIZE_TEST: [128, 43] # default 256x128
+  HF_PROB: 0.5 # random horizontal flip
+  PADDING: 10
+
+  RE: False # enable random erasing
+  RE_PROB: 0.5 # random erasing probability
+
+DATASETS:
+  SOURCE: ['Market-1501']
+  TARGET: ['NTUOutdoorv2_black', 'NTUOutdoorv2_white','whitereid','blackreid','gta_uniform','gta_nonuniform','gta_nonuniform_unique']
+  # STORE_DIR: './datasets'
+  STORE_DIR: '/home/GTA'
+  # STORE_DIR: '../dsta/Datasets'
+
+DATALOADER:
+  NUM_WORKERS: 8
+
+SOLVER:
+  LOSS: 'softmax'
+  MAX_EPOCHS: 120
+  IMS_PER_BATCH: 64
+
+  CHECKPOINT_PERIOD: 10
+  EVAL_PERIOD: 10
+
+TEST:
+  IMS_PER_BATCH: 1
+  LOAD_EPOCH: 90
+
+OUTPUT_DIR: "./checkpoint/Market/Dual_Norm_All"
+DEVICE: "cuda:6"
+# DEVICE: "cuda:0"
